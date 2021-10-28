@@ -13,6 +13,9 @@ export const NavMenu = styled.nav`
   width: 100%;
   height: 100%;
   z-index: 999;
+  /* z-index: -1;
+  opacity: 0;
+  visibility: hidden; */
   overflow-y: auto;
 `;
 
@@ -71,10 +74,22 @@ export const activeLink = {
   color: 'var(--skin-color)'
 }
 
-export const Nav = () => { 
+export const CopyrightText = styled.p`
+  position: absolute;
+  top: 50%;
+  font-size: 1rem;
+  color: var(--text-black-600);
+  transform: translateY(-50%) rotate(-90deg);
+  left:-60px;
+`;
+
+export const Nav = ( { open, setOpen } ) => {
+  const handleClick = () => {
+    setOpen(!open)
+  }
   return (
 		<NavMenu>
-			<CloseNavMenu className='close-nav-menu outer-shadow hover-in-shadow'>
+			<CloseNavMenu onClick={handleClick} className='close-nav-menu outer-shadow hover-in-shadow'>
 				<Close />
 			</CloseNavMenu>
 			<NavMenuInner className='nav-menu-inner'>
@@ -92,7 +107,8 @@ export const Nav = () => {
 						</li>
 					))}
 				</ul>
-			</NavMenuInner>
+      </NavMenuInner>
+      <CopyrightText>&copy; 2021 Timothy Attah</CopyrightText>
 		</NavMenu>
 	);
 }

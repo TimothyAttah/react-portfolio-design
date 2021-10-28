@@ -44,7 +44,10 @@ export const HeaderMenuBtn = styled.div`
 `;
 
 
-export const Header = () => {
+export const Header = ( { open, setOpen } ) => {
+  const handleClick = () => {
+    setOpen(!open)
+  }
   return (
     <HeaderContainer>
       <Container>
@@ -52,7 +55,7 @@ export const Header = () => {
           <HeaderLogo>
             <Link to='/'>T</Link>
           </HeaderLogo>
-          <HeaderMenuBtn className="outer-shadow hover-in-shadow">
+          <HeaderMenuBtn onClick={handleClick} className="outer-shadow hover-in-shadow">
             <Menu />
           </HeaderMenuBtn>
         </Wrapper>
