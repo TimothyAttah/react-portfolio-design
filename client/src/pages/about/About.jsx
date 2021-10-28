@@ -8,6 +8,7 @@ import { Button } from '../../components/buttons';
 import { Link } from 'react-router-dom';
 import { Skills } from '../../components/skills/Skills';
 import { Experience } from '../../components/experience/Experience';
+import { Education } from '../../components/education/Education';
 
 export const AboutSection = styled.section`
   padding: 80px 0 0;
@@ -201,6 +202,7 @@ export const About = () => {
 			<Skills />
       {/* <!-- Skills end --> */ }
       <Experience />
+      <Education />
 		</AboutSection>
 	);
 }
