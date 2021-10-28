@@ -9,7 +9,7 @@ export const AllPages = () => {
 		<div>
 			{open && <Header open={open} setOpen={setOpen} />}
 			{ !open && <Nav open={ open } setOpen={ setOpen } /> }
-			<Home />
+			{/* <Home /> */}
 		</div>
 	);
 }

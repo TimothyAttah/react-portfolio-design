@@ -252,3 +252,24 @@ export const Wrapper = styled.div`
 export const Section = styled.section`
 
 `;
+export const SectionTitle = styled.div`
+  padding: 0 15px;
+  flex: 0 0 100%;
+  max-width: 100%;
+  text-align: center;
+  h2{
+    display: inline-block;
+    font-size: 2rem; //30px
+    font-weight: 700;
+    color: var(--text-black-900);
+    text-transform: uppercase;
+    margin: 0;
+    ::before{
+      content: attr(data-heading);
+      display: block;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--skin-color);
+    }
+  }
+`;
