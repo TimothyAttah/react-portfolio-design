@@ -6,6 +6,7 @@ import ProfilePic from '../../images/photo-2.png'
 import PDF from '../../timothyattah.pdf'
 import { Button } from '../../components/buttons';
 import { Link } from 'react-router-dom';
+import { Skills } from '../../components/skills/Skills';
 
 export const AboutSection = styled.section`
   padding: 80px 0 80px;
@@ -194,7 +195,10 @@ export const About = () => {
 				</AboutTabs>
 			</Wrapper>
 
-			{/* ABOUT TABS END */}
+      {/* ABOUT TABS END */ }
+      {/* <!-- Skills start --> */}
+			<Skills />
+				{/* <!-- Skills end --> */}
 		</AboutSection>
 	);
 }
