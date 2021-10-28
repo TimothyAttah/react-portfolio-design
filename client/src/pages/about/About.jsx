@@ -7,9 +7,10 @@ import PDF from '../../timothyattah.pdf'
 import { Button } from '../../components/buttons';
 import { Link } from 'react-router-dom';
 import { Skills } from '../../components/skills/Skills';
+import { Experience } from '../../components/experience/Experience';
 
 export const AboutSection = styled.section`
-  padding: 80px 0 80px;
+  padding: 80px 0 0;
   min-height: 100vh;
 `;
 
@@ -198,7 +199,8 @@ export const About = () => {
       {/* ABOUT TABS END */ }
       {/* <!-- Skills start --> */}
 			<Skills />
-				{/* <!-- Skills end --> */}
+      {/* <!-- Skills end --> */ }
+      <Experience />
 		</AboutSection>
 	);
 }

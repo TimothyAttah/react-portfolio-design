@@ -8,7 +8,7 @@ export const SkillItem = styled.div`
 	display: flex;
 	justify-content: center;
 	padding: 15px 0;
-	margin-bottom: 20px;
+	margin-bottom: 40px;
 	position: relative;
 	border-radius: 20px;
 	color: var(--text-black-900);
