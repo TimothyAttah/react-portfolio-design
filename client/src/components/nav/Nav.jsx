@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Close } from '@material-ui/icons';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { NavLists } from '../Helper';
 
 export const NavMenu = styled.nav`
@@ -66,22 +66,33 @@ export const NavMenuInner = styled.div`
   }
 `;
 
+export const activeLink = {
+  boxShadow: 'var(--inner-shadow)',
+  color: 'var(--skin-color)'
+}
+
 export const Nav = () => { 
   return (
-    <NavMenu>
-      <CloseNavMenu className="close-nav-menu outer-shadow hover-in-shadow"><Close /></CloseNavMenu>
-      <NavMenuInner className="nav-menu-inner">
-        <ul>
-          { NavLists.map( item => (
-          <li><NavLink to={item.path} target="_blank" className='inner-shadow active'>{item.name}</NavLink></li>
-          ))}
-          {/* <li><Link to='#' target="_blank" className='outer-shadow hover-in-shadow'>about</Link></li>
-          <li><Link to='#' target="_blank" className='outer-shadow hover-in-shadow'>services</Link></li>
-          <li><Link to='#' target="_blank" className='outer-shadow hover-in-shadow'>portfolio</Link></li>
-          <li><Link to='#' target="_blank" className='outer-shadow hover-in-shadow'>testimonial</Link></li>
-          <li><Link to='#' target="_blank" className='outer-shadow hover-in-shadow'>contact</Link></li> */}
-        </ul>
-      </NavMenuInner>
-    </NavMenu>
-  )
+		<NavMenu>
+			<CloseNavMenu className='close-nav-menu outer-shadow hover-in-shadow'>
+				<Close />
+			</CloseNavMenu>
+			<NavMenuInner className='nav-menu-inner'>
+				<ul>
+					{NavLists.map(item => (
+						<li key={item.name}>
+							<NavLink
+								activeStyle={activeLink}
+								to={item.path}
+								target='_blank'
+								className='outer-shadow hover-in-shadow'
+							>
+								{item.name}
+							</NavLink>
+						</li>
+					))}
+				</ul>
+			</NavMenuInner>
+		</NavMenu>
+	);
 }
