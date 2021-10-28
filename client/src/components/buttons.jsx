@@ -19,9 +19,9 @@ const Link = styled.a`
   }
 `;
 
-export const Button = ({children}) => {
+export const Button = ({children, props, target}) => {
   return (
-    <Link href='/about' className='outer-shadow hover-in-shadow'>
+    <Link href={props} target={target} className='outer-shadow hover-in-shadow'>
       {children}
     </Link>
   )

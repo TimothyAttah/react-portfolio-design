@@ -71,7 +71,7 @@ export const Home = () => {
 						<p>Hello</p>
 						<h2>I'm Timothy Attah</h2>
             <h1>Web Designer & Developer</h1>
-            <Button >More About Me</Button>
+            <Button props='/about'>More About Me</Button>
 					</HomeText>
 					<HomeImg className='home-img'>
 						<div className='img-box inner-shadow'>

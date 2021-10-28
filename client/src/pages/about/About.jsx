@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Container, Wrapper, SectionTitle } from '../../styles/globalStyles';
 import ProfilePic from '../../images/photo-2.png'
+import PDF from '../../timothyattah.pdf'
+import { Button } from '../../components/buttons';
 
 export const AboutSection = styled.section`
   padding: 80px 0 80px;
@@ -77,7 +79,8 @@ export const About = () => {
 							positive attitude and tireless energy I encourage others to work
 							hard and succeed. In my free time, I like to watch movies, anime
 							and listen to music.
-						</p>
+            </p>
+            <Button props={PDF} target='_blank'> Download CV</Button>
 					</AboutInfo>
 				</Wrapper>
 			</Container>
