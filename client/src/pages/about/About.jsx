@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import { GitHub, Facebook, LinkedIn } from '@material-ui/icons';
 import { Container, Wrapper, SectionTitle } from '../../styles/globalStyles';
 import ProfilePic from '../../images/photo-2.png'
 import PDF from '../../timothyattah.pdf'
 import { Button } from '../../components/buttons';
+import { Link } from 'react-router-dom';
 
 export const AboutSection = styled.section`
   padding: 80px 0 80px;
@@ -37,10 +39,44 @@ export const AboutInfo = styled.div`
   span{
     font-weight: 600;
   }
+  a {
+    margin: 30px 20px 0 0;
+  }
 `;
 
+export const AboutSocialLinks = styled.div`
+	margin-top: 20px;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
-// export const AboutInfo = styled.div``;
+	a {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 40px;
+		width: 40px;
+		font-size: 1rem;
+		text-align: center;
+		line-height: 40px;
+		color: var(--text-black-600);
+		margin: 0 4px;
+		border-radius: 50%;
+		transition: all 0.3s ease;
+		::after {
+			border-radius: 50%;
+		}
+    :hover{
+      color: var(--skin-color);
+    }
+		.MuiSvgIcon-root {
+			display: flex;
+			align-items: center;
+      justify-content: center;
+		}
+	}
+`;
 // export const AboutInfo = styled.div``;
 
 export const About = () => {
@@ -61,6 +97,29 @@ export const About = () => {
 								className='outer-shadow'
 							/>
 						</div>
+						<AboutSocialLinks>
+							<Link
+								to='www.facebook.com/timothyattah'
+								className='outer-shadow hover-in-shadow'
+								target='_blank'
+							>
+								<Facebook />
+							</Link>
+							<Link
+								to='www.github.com/timothyattah'
+								className='outer-shadow hover-in-shadow'
+								target='_blank'
+							>
+								<GitHub />
+							</Link>
+							<Link
+								to='www/linkedin.com/timothyattah'
+								className='outer-shadow hover-in-shadow'
+								target='_blank'
+							>
+								<LinkedIn />
+							</Link>
+						</AboutSocialLinks>
 					</AboutImg>
 					<AboutInfo className='about-info'>
 						<p>
@@ -79,8 +138,12 @@ export const About = () => {
 							positive attitude and tireless energy I encourage others to work
 							hard and succeed. In my free time, I like to watch movies, anime
 							and listen to music.
-            </p>
-            <Button props={PDF} target='_blank'> Download CV</Button>
+						</p>
+						<Button props={PDF} target='_blank'>
+							{' '}
+							Download CV
+						</Button>
+						<Button props='/contact'> Hire Me</Button>
 					</AboutInfo>
 				</Wrapper>
 			</Container>
