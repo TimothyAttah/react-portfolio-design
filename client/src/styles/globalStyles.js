@@ -242,6 +242,11 @@ export const Wrapper = styled.div`
 		css`
 			justify-content: space-between;
 		`}
+	${props =>
+		props.alignItems &&
+		css`
+			align-items: center;
+		`}
 `;
 
 export const Section = styled.section`

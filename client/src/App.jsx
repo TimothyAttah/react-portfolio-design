@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import { AllPages } from './pages/AllPages';
 import { Home } from './pages/home/Home';
@@ -8,8 +8,8 @@ export const App = () => {
 		<Router>
 				<AllPages />
 			<Switch>
-				<div style={{marginTop:'100px', border: '2px dashed green'}}>
-					<Route exact path='/'>
+				<div style={{marginTop:'100px'}}>
+					<Route exact path='/home'>
 						<Home />
 					</Route>
 				</div>
