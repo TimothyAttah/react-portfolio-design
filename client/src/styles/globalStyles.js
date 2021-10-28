@@ -257,6 +257,7 @@ export const SectionTitle = styled.div`
   flex: 0 0 100%;
   max-width: 100%;
   text-align: center;
+  margin-bottom: 60px;
   h2{
     display: inline-block;
     font-size: 2rem; //30px
