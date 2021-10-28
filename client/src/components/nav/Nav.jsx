@@ -16,7 +16,7 @@ export const NavMenu = styled.nav`
   /* z-index: -1;
   opacity: 0;
   visibility: hidden; */
-  overflow-y: auto;
+  /* overflow-y: auto; */
 `;
 
 export const CloseNavMenu = styled.div`

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Container, Wrapper } from '../../styles/globalStyles';
 import ProfilePic from '../../images/photo-1.png'
 import { Button } from '../../components/buttons';
+import { Effects } from '../../components/Effects';
 
 
 
@@ -62,7 +63,8 @@ export const HomeImgBox = styled.div`
 
 export const Home = () => {
   return (
-		<HomeSection>
+    <HomeSection>
+      <Effects />
 			<Container>
 				<Wrapper alignItems className='full-screen'>
 					<HomeText className='home-text'>
