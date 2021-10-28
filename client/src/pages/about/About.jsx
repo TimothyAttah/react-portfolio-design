@@ -77,6 +77,37 @@ export const AboutSocialLinks = styled.div`
 		}
 	}
 `;
+
+export const AboutTabs = styled.div`
+	padding: 60px 15px 50px;
+	flex: 0 0 100%;
+	max-width: 100%;
+	text-align: center;
+	.active {
+		color: var(--skin-color);
+	}
+`;
+
+export const AboutTabsItem = styled.span`
+  display: inline-block;
+  margin: 0 5px 10px;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  color: var(--text-black-600);
+  font-weight: 500;
+  text-transform: capitalize;
+  :hover:not(.active){
+    opacity: 0.6;
+  }
+
+ `;
+
+
+
+// export const AboutInfo = styled.div``;
 // export const AboutInfo = styled.div``;
 
 export const About = () => {
@@ -147,6 +178,23 @@ export const About = () => {
 					</AboutInfo>
 				</Wrapper>
 			</Container>
+			{/* ABOUT TABS START */}
+
+			<Wrapper>
+				<AboutTabs>
+					<AboutTabsItem className='tab-item outer-shadow active' data-target='.skills'>
+						skills
+					</AboutTabsItem>
+					<AboutTabsItem className='tab-item' data-target='.experience'>
+						experience
+					</AboutTabsItem>
+					<AboutTabsItem className='tab-item' data-target='.education'>
+						education
+					</AboutTabsItem>
+				</AboutTabs>
+			</Wrapper>
+
+			{/* ABOUT TABS END */}
 		</AboutSection>
 	);
 }
