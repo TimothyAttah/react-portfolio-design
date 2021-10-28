@@ -243,3 +243,7 @@ export const Wrapper = styled.div`
 			justify-content: space-between;
 		`}
 `;
+
+export const Section = styled.section`
+
+`;

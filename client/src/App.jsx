@@ -1,17 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import { Header } from './components/header/Header';
-import { Home } from './pages/Home';
+import { AllPages } from './pages/AllPages';
+import { Home } from './pages/home/Home';
 
 export const App = () => {
   return (
-    <Router>
-      <Switch>
-        {/* <Header /> */}
-        <Route exact path='/'>
-          <Home />
-        </Route>
-      </Switch>
-    </Router>
-  )
+		<Router>
+				<AllPages />
+			<Switch>
+				<div style={{marginTop:'100px', border: '2px dashed green'}}>
+					<Route exact path='/'>
+						<Home />
+					</Route>
+				</div>
+			</Switch>
+		</Router>
+	);
 }
