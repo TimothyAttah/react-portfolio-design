@@ -108,9 +108,12 @@ export const AboutTabsItem = styled.span`
 
  `;
 
+export const AboutTabContent = styled.div`
+	flex: 0 0 100%;
+	max-width: 100%;
+	display: none;
+`;
 
-
-// export const AboutInfo = styled.div``;
 // export const AboutInfo = styled.div``;
 
 export const About = () => {
@@ -196,13 +199,17 @@ export const About = () => {
 					</AboutTabsItem>
 				</AboutTabs>
 			</Wrapper>
-
       {/* ABOUT TABS END */ }
-      {/* <!-- Skills start --> */}
+
+      <AboutTabContent>
 			<Skills />
-      {/* <!-- Skills end --> */ }
+			</AboutTabContent>
+			<AboutTabContent>
       <Experience />
+			</AboutTabContent>
+			<AboutTabContent>
       <Education />
+			</AboutTabContent>
 		</AboutSection>
 	);
 }

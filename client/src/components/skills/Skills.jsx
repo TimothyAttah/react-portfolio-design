@@ -3,6 +3,12 @@ import styled from 'styled-components';
 import { Wrapper } from '../../styles/globalStyles';
 import { ArrowRightAltTwoTone } from '@material-ui/icons';
 
+export const SkillsContainer = styled.div`
+	/* flex: 0 0 100%;
+	max-width: 100%;
+	display: none; */
+`;
+
 export const SkillItem = styled.div`
 	width: 200px;
 	display: flex;
@@ -22,7 +28,7 @@ export const SkillItem = styled.div`
 
 export const Skills = () => {
 	return (
-		<>
+		<SkillsContainer className='active'>
 			<Wrapper primary alignItems className='skills__container'>
 				<SkillItem className='outer-shadow'>
 					<ArrowRightAltTwoTone />
@@ -58,6 +64,6 @@ export const Skills = () => {
 					<p>Postgres/SQL</p>
 				</SkillItem>
 			</Wrapper>
-		</>
+		</SkillsContainer>
 	);
 };

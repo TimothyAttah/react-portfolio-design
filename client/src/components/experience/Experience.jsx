@@ -4,7 +4,7 @@ import { Wrapper } from '../../styles/globalStyles';
 import { Work } from '@material-ui/icons';
 
 export const ExperienceContainer = styled.div`
-  padding-bottom: 80px;
+	padding-bottom: 80px;
 `;
 export const TimeLine = styled.div`
   flex: 0 0 100%;
