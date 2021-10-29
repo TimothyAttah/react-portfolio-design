@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { GitHub, Facebook, LinkedIn } from '@material-ui/icons';
 import { Container, Wrapper, SectionTitle } from '../../styles/globalStyles';
@@ -111,12 +111,58 @@ export const AboutTabsItem = styled.span`
 export const AboutTabContent = styled.div`
 	flex: 0 0 100%;
 	max-width: 100%;
-	display: none;
 `;
 
-// export const AboutInfo = styled.div``;
 
 export const About = () => {
+	// useEffect( () => {
+	// 	const aboutSection = document.querySelector('.about-section'),
+	// 		tabsContainer = document.querySelector('.about-tabs');
+
+	// 	tabsContainer.addEventListener( 'click', ( event ) => {
+	// 		if ( event.target.classList.contains( 'tab-item' ) &&
+	// 			!event.target.classList.contains( 'active' ) ) {
+	// 			const target = event.target.getAttribute( 'data-target' );
+	// 			// deactivate existing active 'tab-item'
+	// 			tabsContainer
+	// 				.querySelector( '.active' )
+	// 				.classList.remove( 'outer-shadow', 'active' );
+	// 			// activate new  'tab-item'
+	// 			event.target.classList.add( 'active', 'outer-shadow' );
+	// 			// deactivate existing active 'tab-content'
+	// 			aboutSection
+	// 				.querySelector( '.tab-content.active' )
+	// 				.classList.remove( 'active' );
+	// 			// activate new  'tab-content'
+	// 			aboutSection.querySelector( target ).classList.add( 'active' );
+	// 		}
+	// 	} )
+	// }, [] );
+
+
+
+const [skills, setSkills] = useState(true)
+const [experience, setExperience] = useState(false)
+const [education, setEducation] = useState(false)
+
+	const handleSkills = () => {
+		setSkills( true )
+		setEducation( false )
+		setExperience( false )
+	}
+	const handleExperience = () => {
+		setSkills( false )
+		setEducation( false )
+		setExperience( true )
+	}
+	const handleEducation = () => {
+		setSkills( false )
+		setEducation( true)
+		setExperience( false )
+	}
+
+
+
   return (
 		<AboutSection>
 			<Container>
@@ -188,28 +234,42 @@ export const About = () => {
 
 			<Wrapper>
 				<AboutTabs>
-					<AboutTabsItem className='tab-item outer-shadow active' data-target='.skills'>
+					<AboutTabsItem
+						className={`${skills && 'outer-shadow active'}`}
+						onClick={handleSkills}
+					>
 						skills
 					</AboutTabsItem>
-					<AboutTabsItem className='tab-item' data-target='.experience'>
+					<AboutTabsItem
+						onClick={handleExperience}
+						className={`${experience && 'outer-shadow active' }`}
+					>
 						experience
 					</AboutTabsItem>
-					<AboutTabsItem className='tab-item' data-target='.education'>
+					<AboutTabsItem
+						onClick={handleEducation}
+						className={`${education && 'outer-shadow active'}`}
+					>
 						education
 					</AboutTabsItem>
 				</AboutTabs>
 			</Wrapper>
-      {/* ABOUT TABS END */ }
 
-      <AboutTabContent>
-			<Skills />
-			</AboutTabContent>
-			<AboutTabContent>
-      <Experience />
-			</AboutTabContent>
-			<AboutTabContent>
-      <Education />
-			</AboutTabContent>
+				{skills && (
+					<AboutTabContent>
+						<Skills />
+					</AboutTabContent>
+				)}
+				{experience && (
+					<AboutTabContent>
+						<Experience />
+					</AboutTabContent>
+				)}
+				{education && (
+					<AboutTabContent>
+						<Education />
+					</AboutTabContent>
+				)}
 		</AboutSection>
 	);
 }
