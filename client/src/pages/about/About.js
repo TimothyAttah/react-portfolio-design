@@ -100,4 +100,5 @@ export const AboutTabsItem = styled.span`
 export const AboutTabContent = styled.div`
 	flex: 0 0 100%;
 	max-width: 100%;
+	animation: fadeInTop 0.5s ease;
 `;
