@@ -9,11 +9,11 @@ export const ServiceSection = styled.section`
   min-height: 100vh;
 `;
 export const ServiceItem = styled.section`
-  flex: 0 0 50%; //0 0 33.33%
-  max-width: 50%;
-  padding: 15px;
-  display: flex;
-  flex-wrap: wrap;
+	flex: 0 0 50%; //0 0 33.33% 0 0 50%
+	max-width: 50%;
+	padding: 15px;
+	display: flex;
+	flex-wrap: wrap;
 `;
 export const ServiceItemInner = styled.section`
 	padding: 50px 15px;
