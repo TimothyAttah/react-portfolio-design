@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import {Add, Close} from '@material-ui/icons'
+import {Add, ArrowLeft, ArrowRightAlt, ArrowRightOutlined, Close} from '@material-ui/icons'
 import { Wrapper, Container, SectionTitle } from '../../styles/globalStyles';
 import QuizImg from '../../images/quiz/quiz-1.png'
 import { Link } from 'react-router-dom';
@@ -89,11 +89,11 @@ export const PortfolioSectionItemImg = styled.div`
 		font-weight: 500;
 		color: var(--skin-color);
 		transition: all 0.3s ease;
-		position: absolute;
-		left: 0;
-		bottom: -4px;
+		 position: absolute;
+		 left: 0;
+		 bottom: -4px;
 		transform: translateY(-5px);
-		z-index: -1;
+		/* z-index: -1; */
 		opacity: 0;
 	}
 `;
@@ -109,92 +109,169 @@ export const PortfolioSectionItemTitle = styled.p`
 
 
 
-export const PortfolioPopup = styled.div`
-	background-color: var(--bg-black-50);
-	position: fixed;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 1000;
-	overflow-y: auto;
-`;
-export const PortfolioPopupMain= styled.div`
-	min-height: 100vh;
-	max-width: 1350px;
-	width: 85%;
-	margin: auto;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-`;
-export const PortfolioPopupMainInner = styled.div`
-	padding: 70px 0 50px;
-	position: relative;
-	.pp-img {
-		max-width: 100%;
-		width: auto;
-		height: auto;
-		padding: 10px;
-		border-radius: 5px;
-	}
-	.pp-project-details-btn {
-		position: absolute;
-		left: 0;
-		border-radius: 30px;
-		font-size: 1rem;
-		font-weight: 500;
-		color: var(--skin-color);
-		top: 15px;
-		height: 40px;
-		line-height: 40px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		padding: 0 15px;
-		cursor: pointer;
-		transition: all 0.3s ease;
-		::after {
-			border-radius: 30px;
-		}
-		.MuiSvgIcon-root {
-			margin-left: 5px;
-		}
-	}
-	.pp-close {
-		position: absolute;
-		right: 0;
-		border-radius: 50%;
-		cursor: pointer;
-		transition: all 0.3s ease;
-		height: 40px;
-		width: 40px;
-		top: 15px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		color: var(--text-black-600);
-		::after {
-			border-radius: 50%;
-		}
-	}
-	.pp-counter {
-		position: absolute;
-		right: 0;
-		height: 40px;
-		line-height: 40px;
-		bottom: 5px;
-		color: var(--text-black-600);
-	}
-`;
 // export const PortfolioPopup = styled.div`
+// 	background-color: var(--bg-black-50);
+// 	position: fixed;
+// 	left: 0;
+// 	top: 0;
+// 	width: 100%;
+// 	height: 100%;
+// 	z-index: 1000;
+// 	overflow-y: auto;
+// 	.separator{
+// 		height: 1px;
+// 		width: 100%;
+// 		display: block;
+// 		background-color: var(--bg-black-100);
+// 	}
+// `;
+// export const PortfolioPopupMain = styled.div`
+// 	min-height: 100vh;
+// 	max-width: 1350px;
+// 	width: 85%;
+// 	margin: auto;
+// 	display: flex;
+// 	align-items: center;
+// 	justify-content: center;
+// 	.pp-prev,
+// 	.pp-next {
+// 		position: fixed;
+// 		top: 50%;
+// 		height: 40px;
+// 		width: 40px;
+// 		display: flex;
+// 		align-items: center;
+// 		justify-content: center;
+// 		cursor: pointer;
+// 		z-index: 1010;
+// 		color: var(--text-black-900);
+// 		transition: all 0.3s ease;
+// 		opacity: 0.5;
+// 		:hover{
+// 			opacity: 1;
+// 		}
+// 		.MuiSvgIcon-root {
+// 			font-size:4rem;
+// 		}
+// 	}
+// 	.pp-prev {
+// 		left: 15px;
+// 	}
+// 	.pp-next {
+// 		right: 15px;
+// 	}
+// `;
+// export const PortfolioPopupMainInner = styled.div`
+// 	padding: 70px 0 50px;
+// 	position: relative;
+// 	.pp-img {
+// 		max-width: 100%;
+// 		width: auto;
+// 		height: auto;
+// 		padding: 10px;
+// 		border-radius: 5px;
+// 	}
+// 	.pp-project-details-btn {
+// 		position: absolute;
+// 		left: 0;
+// 		border-radius: 30px;
+// 		font-size: 1rem;
+// 		font-weight: 500;
+// 		color: var(--skin-color);
+// 		top: 15px;
+// 		height: 40px;
+// 		line-height: 40px;
+// 		display: flex;
+// 		align-items: center;
+// 		justify-content: center;
+// 		padding: 0 15px;
+// 		cursor: pointer;
+// 		transition: all 0.3s ease;
+// 		::after {
+// 			border-radius: 30px;
+// 		}
+// 		.MuiSvgIcon-root {
+// 			margin-left: 5px;
+// 		}
+// 	}
+// 	.pp-close {
+// 		position: absolute;
+// 		right: 0;
+// 		border-radius: 50%;
+// 		cursor: pointer;
+// 		transition: all 0.3s ease;
+// 		height: 40px;
+// 		width: 40px;
+// 		top: 15px;
+// 		display: flex;
+// 		align-items: center;
+// 		justify-content: center;
+// 		color: var(--text-black-600);
+// 		::after {
+// 			border-radius: 50%;
+// 		}
+// 	}
+// 	.pp-counter {
+// 		position: absolute;
+// 		right: 0;
+// 		height: 40px;
+// 		line-height: 40px;
+// 		bottom: 5px;
+// 		color: var(--text-black-600);
+// 	}
+// `;
+// export const PortfolioPopupDetails = styled.div`
+// 	/* background-color: red; */
+// 	max-width: 1350px;
+// 	width: calc(85% + 30px);
+// 	margin: auto;
+// `;
+// export const PortfolioPopupDetailsInner = styled.div`
+// 	padding: 30px 0;
+// `;
+// export const PortfolioPopupTitle = styled.div`
+// 	padding: 0 15px;
+// 	h2 {
+// 		font-size: 1.6rem;
+// 		color: var(--text-black-900);
+// 		text-transform: capitalize;
+// 		font-weight: 600;
+// 		margin: 0 0 5px;
+// 	}
+// 	p {
+// 		font-size: 1.1rem;
+// 		color: var(--text-black-600);
+// 		font-weight: 600;
+// 		margin: 0 0 15px;
+// 	}
+// `;
+// export const PortfolioPopupProjectsDetails = styled.div`
+// 	.description {
+// 		flex: 0 0 65%;
+// 		max-width: 65%;
+// 		padding: 0 15px;
+// 	}
+// 	.info {
+// 		flex: 0 0 35%;
+// 		max-width: 35%;
+// 		padding: 0 15px;
+// 	}
+// `;
+// export const PortfolioPopupDetails = styled.div`
 
 // `;
 
 export const Portfolio = () => {
-  const [ openQuiz, setOpenQuiz ] = useState( true)
+  const [ openQuiz, setOpenQuiz ] = useState( false)
+	const [ open, setOpen ] = useState( false )
+	
+
   const handleOpenQuiz = () => {
     setOpenQuiz( true );
+	}
+	
+  const handleOpen = () => {
+		setOpen( true );
   }
 	return (
 		<>
@@ -233,6 +310,7 @@ export const Portfolio = () => {
 							</PortfolioSectionFilterItem>
 						</PortfolioSectionFilter>
 					</Wrapper>
+
 					{/* PORTFOLIO ITEMS START */}
 					<Wrapper>
 						<PortfolioSectionItems className='portfolio-items'>
@@ -248,19 +326,21 @@ export const Portfolio = () => {
 											alt='Quiz-pic'
 											data-screenshots={`${QuizImg}, ${QuizImg}`}
 										/>
-										<span onClick={handleOpenQuiz} className='view-project'>
+										<span onClick={handleOpen} className='view-project'>
 											View project
 										</span>
 									</PortfolioSectionItemImg>
 									<PortfolioSectionItemTitle className='portfolio-item-title'>
-										Budgetary{' '}
+										Quiz App
 									</PortfolioSectionItemTitle>
+
 									{/* PORTFOLIO ITEM DETAILS START */}
-									{openQuiz && <Quiz />}
+									{/* {open && <Quiz />} */}
 									{/* PORTFOLIO ITEM DETAILS END */}
 								</PortfolioSectionItemInner>
 							</PortfolioSectionItem>
 							{/* PORTFOLIO ITEM END */}
+
 							{/* PORTFOLIO ITEM START 2*/}
 							<PortfolioSectionItem
 								className='portfolio-item'
@@ -273,7 +353,7 @@ export const Portfolio = () => {
 											alt='Quiz-pic'
 											data-screenshots={`${QuizImg}, ${QuizImg}`}
 										/>
-										<span onClick={handleOpenQuiz} className='view-project'>
+										<span onClick={handleOpen} className='view-project'>
 											View project
 										</span>
 									</PortfolioSectionItemImg>
@@ -281,7 +361,7 @@ export const Portfolio = () => {
 										Budgetary{' '}
 									</PortfolioSectionItemTitle>
 									{/* PORTFOLIO ITEM DETAILS START */}
-									{openQuiz && <Quiz />}
+									{/* {open && <Quiz />} */}
 
 									{/* PORTFOLIO ITEM DETAILS END */}
 								</PortfolioSectionItemInner>
@@ -299,17 +379,13 @@ export const Portfolio = () => {
 											alt='Quiz-pic'
 											data-screenshots={`${QuizImg}, ${QuizImg}`}
 										/>
-										<span onClick={handleOpenQuiz} className='view-project'>
+										<span onClick={handleOpen} className='view-project'>
 											View project
 										</span>
 									</PortfolioSectionItemImg>
 									<PortfolioSectionItemTitle className='portfolio-item-title'>
 										Budgetary{' '}
 									</PortfolioSectionItemTitle>
-									{/* PORTFOLIO ITEM DETAILS START */}
-									{openQuiz && <Quiz />}
-
-									{/* PORTFOLIO ITEM DETAILS END */}
 								</PortfolioSectionItemInner>
 							</PortfolioSectionItem>
 							{/* PORTFOLIO ITEM END */}
@@ -325,17 +401,13 @@ export const Portfolio = () => {
 											alt='Quiz-pic'
 											data-screenshots={`${QuizImg}, ${QuizImg}`}
 										/>
-										<span onClick={handleOpenQuiz} className='view-project'>
+										<span onClick={handleOpen} className='view-project'>
 											View project
 										</span>
 									</PortfolioSectionItemImg>
 									<PortfolioSectionItemTitle className='portfolio-item-title'>
-										Budgetary{' '}
+										Budgetary
 									</PortfolioSectionItemTitle>
-									{/* PORTFOLIO ITEM DETAILS START */}
-									{openQuiz && <Quiz />}
-
-									{/* PORTFOLIO ITEM DETAILS END */}
 								</PortfolioSectionItemInner>
 							</PortfolioSectionItem>
 							{/* PORTFOLIO ITEM END */}
@@ -344,21 +416,9 @@ export const Portfolio = () => {
 					{/* PORTFOLIO ITEMS END */}
 				</Container>
 			</PortfolioSection>
-			<PortfolioPopup className='pp portfolio-popup'>
-				<PortfolioPopupMain className='pp-main'>
-					<PortfolioPopupMainInner className='pp-main-inner'>
-						<div className='pp-project-details-btn outer-shadow  hover-in-shadow'>
-							Project Details
-							<Add />
-						</div>
-						<div className='pp-close outer-shadow  hover-in-shadow'>
-							<Close />
-						</div>
-						<img src={ QuizImg } alt='' className='pp-img outer-shadow ' />
-						<div className="pp-counter">1 of 6</div>
-					</PortfolioPopupMainInner>
-				</PortfolioPopupMain>
-			</PortfolioPopup>
+			{/* PORTFOLIO ITEM DETAILS START */}
+			{open && <Quiz />}
+			{/* PORTFOLIO ITEM DETAILS START */}
 		</>
 	);
 }
