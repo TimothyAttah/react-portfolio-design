@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import { Slider } from './components/slider/Slider';
 import { About } from './pages/about/About';
 import { AllPages } from './pages/AllPages';
 import { Home } from './pages/home/Home';
@@ -34,6 +35,10 @@ export const App = () => {
 					<Route exact path='/portfolio'>
 						<AllPages />
 						<Portfolio />
+					</Route>
+					<Route exact path='/slider'>
+						<AllPages />
+						<Slider />
 					</Route>
 				</div>
 			</Switch>

@@ -1,19 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Wrapper, Container } from '../../../styles/globalStyles';
+import { Wrapper } from '../../../styles/globalStyles';
 import QuizImg from '../../../images/quiz/quiz-1.png';
 import { Link } from 'react-router-dom';
-import { Add, ArrowLeft, ArrowRightOutlined, Close } from '@material-ui/icons';
-
-export const PortfolioSectionItems = styled.div``;
-export const PortfolioSectionItem = styled.div``;
-export const PortfolioSectionItemInner = styled.div``;
-export const PortfolioSectionItemImg = styled.div``;
-export const PortfolioSectionItemDetails = styled.div`
-	
-`;
-
-
+import { Add, ArrowLeft, ArrowRightOutlined, Close, Remove } from '@material-ui/icons';
+import { quizItems } from '../../images';
 
 
 
@@ -129,10 +120,12 @@ export const PortfolioPopupMainInner = styled.div`
 	}
 `;
 export const PortfolioPopupDetails = styled.div`
-	/* background-color: red; */
 	max-width: 1350px;
 	width: calc(85% + 30px);
 	margin: auto;
+	/* max-height: 0;
+	overflow: hidden;
+	opacity: 0; */
 `;
 export const PortfolioPopupDetailsInner = styled.div`
 	padding: 30px 0;
@@ -147,35 +140,112 @@ export const PortfolioPopupTitle = styled.div`
 		margin: 0 0 5px;
 	}
 	p {
-		font-size: 1.1rem;
+		font-size: 1rem;
 		color: var(--text-black-600);
 		font-weight: 600;
 		margin: 0 0 15px;
+		border-bottom: 1px solid var(--bg-black-100);
+		padding-bottom: 10px;
+		span{
+			font-weight: 400;
+		}
 	}
 `;
 export const PortfolioPopupProjectsDetails = styled.div`
+	h3 {
+		font-size: 1.3rem;
+		color: var(--text-black-700);
+		font-weight: 600;
+		margin: 0 0 15px;
+		text-transform: capitalize;
+	}
 	.description {
 		flex: 0 0 65%;
 		max-width: 65%;
 		padding: 0 15px;
+		p {
+			font-size: 1rem;
+			color: var(--text-black-600);
+			line-height: 26px;
+			margin: 0;
+		}
 	}
 	.info {
 		flex: 0 0 35%;
 		max-width: 35%;
 		padding: 0 15px;
+		ul li {
+			display: block;
+			margin-bottom: 10px;
+			font-weight: 600;
+			color: var(--text-black-600);
+			font-size: 1rem;
+			:last-child {
+				margin-bottom: 0;
+			}
+			span{
+				font-weight: 400;
+				a {
+					font-weight: 800;
+					font-style: italic;
+					color: var(--skin-color);
+					padding: 5px 10px;
+					border-radius: 10px;
+				}
+			}
+		}
 	}
 `;
 
+
+export const ImageWrapper = styled.div`
+	/* height: 100%; */
+	display: flex;
+	transition: all 1.5s ease;
+	/* transform: translateX(${props => props.slideIndex * -100}vw); */
+`;
+
+export const Slide = styled.div`
+	/* width: 100vw; */
+	/* height: 100vh; */
+	display: flex;
+	align-items: center;
+	/* background-color: #${props => props.bg}; */
+`;
+export const ImageContainer = styled.div`
+	/* height: 100%; */
+	/* flex: 1; */
+`;
+
+export const Image = styled.img`
+	/* height: 80%; */
+`;
+
 export const Quiz = () => {
+	const [ openDetails, setOpenDetails ] = useState( false )
+	
+	const handleOpenDetails = () => {
+		setOpenDetails(!openDetails)
+	}
+
+	const [slideIndex, setSlideIndex] = useState(0);
+	const handleClick = direction => {
+		if (direction === 'left') {
+			setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2);
+		} else {
+			setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
+		}
+	};
   return (
-			<>
-				<PortfolioPopup className='pp portfolio-popup'>
+		<>
+			<PortfolioPopup className='pp portfolio-popup'>
+				{openDetails && (
 					<PortfolioPopupDetails>
 						<PortfolioPopupDetailsInner>
 							<PortfolioPopupTitle>
 								<h2>Personal portfolio</h2>
 								<p>
-									Category -{' '}
+									Category -
 									<span className='pp-project-category'>Web Application</span>
 								</p>
 							</PortfolioPopupTitle>
@@ -202,6 +272,7 @@ export const Quiz = () => {
 													<Link
 														to='https://github.com/TimothyAttah/Budgets-Tracker'
 														target='_blank'
+														className='outer-shadow'
 													>
 														Budgetary
 													</Link>
@@ -214,7 +285,11 @@ export const Quiz = () => {
 											<li>
 												Live Demo -{' '}
 												<span>
-													<Link to='www.budgetary.netlify.com' target='_blank'>
+													<Link
+														to='www.budgetary.netlify.com'
+														target='_blank'
+														className='outer-shadow'
+													>
 														Budgetary
 													</Link>
 												</span>
@@ -225,30 +300,53 @@ export const Quiz = () => {
 							</PortfolioPopupProjectsDetails>
 						</PortfolioPopupDetailsInner>
 					</PortfolioPopupDetails>
+				)}
+				<div className='separator'></div>
 
-					<div className='separator'></div>
+				<PortfolioPopupMain className='pp-main'>
+					<PortfolioPopupMainInner className='pp-main-inner'>
+						<div
+							onClick={handleOpenDetails}
+							className='pp-project-details-btn outer-shadow  hover-in-shadow'
+						>
+							Project Details
+							{openDetails ? <Remove /> : <Add />}
+						</div>
+						<div className='pp-close outer-shadow  hover-in-shadow'>
+							<Close />
+						</div>
 
-					<PortfolioPopupMain className='pp-main'>
-						<PortfolioPopupMainInner className='pp-main-inner'>
-							<div className='pp-project-details-btn outer-shadow  hover-in-shadow'>
-								Project Details
-								<Add />
-							</div>
-							<div className='pp-close outer-shadow  hover-in-shadow'>
-								<Close />
-							</div>
-							<img src={QuizImg} alt='' className='pp-img outer-shadow ' />
-							<div className='pp-counter'>1 of 6</div>
-						</PortfolioPopupMainInner>
-						<div className='pp-prev'>
-							<ArrowLeft />
-						</div>
-						<div className='pp-next'>
-							<ArrowRightOutlined />
-						</div>
-					</PortfolioPopupMain>
-				</PortfolioPopup>
-				{/* PORTFOLIO ITEM DETAILS END */}
-			</>
+						<ImageWrapper slideIndex={slideIndex}>
+							{quizItems.map(item => (
+								<Slide>
+									<ImageContainer>
+										<Image
+											src={item.img}
+											alt=''
+											className='pp-img outer-shadow '
+										/>
+									</ImageContainer>
+								</Slide>
+							))}
+						</ImageWrapper>
+
+						{/* { quizItems.map( item => (
+							
+						<img src={ item } alt='' className='pp-img outer-shadow ' />
+						))}
+						 */}
+
+						<div className='pp-counter'>1 of 6</div>
+					</PortfolioPopupMainInner>
+					<div className='pp-prev'>
+						<ArrowLeft />
+					</div>
+					<div className='pp-next'>
+						<ArrowRightOutlined />
+					</div>
+				</PortfolioPopupMain>
+			</PortfolioPopup>
+			{/* PORTFOLIO ITEM DETAILS END */}
+		</>
 	);
 }
