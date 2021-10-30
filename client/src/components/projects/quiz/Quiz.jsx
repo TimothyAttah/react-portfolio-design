@@ -8,7 +8,9 @@ export const PortfolioSectionItems = styled.div``;
 export const PortfolioSectionItem = styled.div``;
 export const PortfolioSectionItemInner = styled.div``;
 export const PortfolioSectionItemImg = styled.div``;
-export const PortfolioSectionItemDetails = styled.div``;
+export const PortfolioSectionItemDetails = styled.div`
+	display: none;
+`;
 
 export const Quiz = () => {
   return (
