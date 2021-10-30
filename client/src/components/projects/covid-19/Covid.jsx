@@ -1,12 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Wrapper } from '../../../styles/globalStyles';
 import QuizImg from '../../../images/quiz/quiz-1.png';
 import { Link } from 'react-router-dom';
-import { Add, ArrowLeft, ArrowRightOutlined, Close, Remove } from '@material-ui/icons';
-import { quizItems, quizImages } from '../../images';
-
-
+import {
+	Add,
+	ArrowLeft,
+	ArrowRightOutlined,
+	Close,
+	Remove,
+} from '@material-ui/icons';
+import { covidImages } from '../../images';
 
 export const PortfolioPopup = styled.div`
 	background-color: var(--bg-black-50);
@@ -17,7 +21,7 @@ export const PortfolioPopup = styled.div`
 	height: 100%;
 	z-index: 1000;
 	overflow-y: auto;
-	transition: all 0.3s ease;
+  transition: all 0.3s ease;
 	.separator {
 		height: 1px;
 		width: 100%;
@@ -147,7 +151,7 @@ export const PortfolioPopupTitle = styled.div`
 		margin: 0 0 15px;
 		border-bottom: 1px solid var(--bg-black-100);
 		padding-bottom: 10px;
-		span{
+		span {
 			font-weight: 400;
 		}
 	}
@@ -184,7 +188,7 @@ export const PortfolioPopupProjectsDetails = styled.div`
 			:last-child {
 				margin-bottom: 0;
 			}
-			span{
+			span {
 				font-weight: 400;
 				a {
 					font-weight: 800;
@@ -197,7 +201,6 @@ export const PortfolioPopupProjectsDetails = styled.div`
 		}
 	}
 `;
-
 
 export const ImageWrapper = styled.div`
 	/* height: 100%; */
@@ -222,12 +225,12 @@ export const Image = styled.img`
 	/* height: 80%; */
 `;
 
-export const Quiz = ({close}) => {
-	const [ openDetails, setOpenDetails ] = useState( false )
-	
+export const Covid = ({close}) => {
+	const [openDetails, setOpenDetails] = useState(false);
+
 	const handleOpenDetails = () => {
-		setOpenDetails(!openDetails)
-	}
+		setOpenDetails(!openDetails);
+	};
 
 	const [slideIndex, setSlideIndex] = useState(0);
 	const handleClick = direction => {
@@ -237,76 +240,12 @@ export const Quiz = ({close}) => {
 			setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
 		}
 	};
-
-
-
-	useEffect( () => {
-		 
-	const popup = document.querySelector('.pp-main'),
-		prevBtn = document.querySelector('.pp-prev'),
-		nextBtn = document.querySelector('.pp-next'),
-		closeBtn = document.querySelector('.pp-close'),
-		projectDetailsContainer = popup.querySelector('.pp-details'),
-		projectDetailsBtn = popup.querySelector('.pp-project-details-btn');
-
-const portfolioItems = document.querySelector('.pp-main-inner');
-
-		let itemIndex, slideIndex, screenshots;
-
-
-		// popup.addEventListener( 'click', ( e ) => {
-		// 	if (e.target.closest('.pp-main-inner')) {
-		// 		const portfolioItem = e.target.closest('.pp-main-inner').parentElement;
-		// 		itemIndex = Array.from(portfolioItem.parentElement.children).indexOf(
-		// 			portfolioItem
-		// 		);
-		// 		screenshots = portfolioItems
-		// 					.querySelector('.portfolio-item-img img')
-		// 					.getAttribute('data-screenshots');
-		// 	}
-		// } )
-		
-
-
-		// portfolioItemsContainer.addEventListener('click', e => {
-		// 	if (e.target.closest('.portfolio-item-inner')) {
-		// 		const portfolioItem = e.target.closest(
-		// 			'.portfolio-item-inner'
-		// 		).parentElement;
-		// 		itemIndex = Array.from(portfolioItem.parentElement.children).indexOf(
-		// 			portfolioItem
-		// 		);
-		// 		screenshots = portfolioItems[itemIndex]
-		// 			.querySelector('.portfolio-item-img img')
-		// 			.getAttribute('data-screenshots');
-		// 		// convert screenshots into array
-		// 		screenshots = screenshots.split(',');
-		// 		slideIndex = 0;
-		// 		popupToggle();
-		// 	}
-		// });
-
-
-	}, [] )
-	
-	useEffect( () => {
-		const portfolioItems = document.querySelector('.pp-main');
-
-		let itemIndex, slideIndex, screenshots;
-		screenshots = portfolioItems
-			.querySelector('.pp-main-inner img')
-			.getAttribute('data-screenshots');
-		// convert screenshots into array
-				screenshots = screenshots.split(',');
-		console.log(screenshots);
-	},[])
-
-  return (
+	return (
 		<>
 			<PortfolioPopup className='pp portfolio-popup'>
 				{openDetails && (
-					<PortfolioPopupDetails className='pp-details'>
-						<PortfolioPopupDetailsInner className='pp-details-inner'>
+					<PortfolioPopupDetails>
+						<PortfolioPopupDetailsInner>
 							<PortfolioPopupTitle>
 								<h2>Personal portfolio</h2>
 								<p>
@@ -377,39 +316,15 @@ const portfolioItems = document.querySelector('.pp-main-inner');
 							Project Details
 							{openDetails ? <Remove /> : <Add />}
 						</div>
-						<div
-							onClick={() => close(false)}
-							className='pp-close outer-shadow  hover-in-shadow'
-						>
+						<div onClick={()=> close(false)} className='pp-close outer-shadow  hover-in-shadow'>
 							<Close />
 						</div>
 
 						<img
-							src={quizImages.quiz1}
+							src={covidImages.covid1}
 							alt=''
 							className='pp-img outer-shadow '
-							data-screenshots={`${quizImages.quiz1}, ${quizImages.quiz2}, ${quizImages.quiz3}, ${quizImages.quiz4}`}
 						/>
-
-						{/* <ImageWrapper slideIndex={slideIndex}>
-							{quizItems.map(item => (
-								<Slide>
-									<ImageContainer>
-										<Image
-											src={item.img}
-											alt=''
-											className='pp-img outer-shadow '
-										/>
-									</ImageContainer>
-								</Slide>
-							))}
-						</ImageWrapper> */}
-
-						{/* { quizItems.map( item => (
-							
-						<img src={ item } alt='' className='pp-img outer-shadow ' />
-						))}
-						 */}
 
 						<div className='pp-counter'>1 of 6</div>
 					</PortfolioPopupMainInner>
@@ -424,4 +339,4 @@ const portfolioItems = document.querySelector('.pp-main-inner');
 			{/* PORTFOLIO ITEM DETAILS END */}
 		</>
 	);
-}
+};

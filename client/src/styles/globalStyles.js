@@ -53,7 +53,7 @@ body {
   border: 2px solid red;
   /* overflow-y: hidden; */
 }
-body.hidden-scrolling{
+body.stop-scrolling{
   overflow-y:hidden;
 }
 *:not(i){

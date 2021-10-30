@@ -27,6 +27,19 @@ export const images = {
   amazon1
 }
 
+export const quizImages = {
+  quiz1,
+  quiz2,
+  quiz3,
+  quiz4
+}
+
+export const covidImages = {
+  covid1,
+  covid2,
+  covid3
+}
+
 
 export const quizItems = [
   {
