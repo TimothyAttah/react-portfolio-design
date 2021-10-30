@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import {Add, Close} from '@material-ui/icons'
 import { Wrapper, Container, SectionTitle } from '../../styles/globalStyles';
 import QuizImg from '../../images/quiz/quiz-1.png'
 import { Link } from 'react-router-dom';
@@ -128,14 +129,62 @@ export const PortfolioPopupMain= styled.div`
 	justify-content: center;
 `;
 export const PortfolioPopupMainInner = styled.div`
-	background-color: gray;
 	padding: 70px 0 50px;
-	.pp-img{
+	position: relative;
+	.pp-img {
 		max-width: 100%;
 		width: auto;
 		height: auto;
 		padding: 10px;
 		border-radius: 5px;
+	}
+	.pp-project-details-btn {
+		position: absolute;
+		left: 0;
+		border-radius: 30px;
+		font-size: 1rem;
+		font-weight: 500;
+		color: var(--skin-color);
+		top: 15px;
+		height: 40px;
+		line-height: 40px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0 15px;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		::after {
+			border-radius: 30px;
+		}
+		.MuiSvgIcon-root {
+			margin-left: 5px;
+		}
+	}
+	.pp-close {
+		position: absolute;
+		right: 0;
+		border-radius: 50%;
+		cursor: pointer;
+		transition: all 0.3s ease;
+		height: 40px;
+		width: 40px;
+		top: 15px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: var(--text-black-600);
+		::after {
+			border-radius: 50%;
+		}
+	}
+	.pp-counter {
+		position: absolute;
+		right: 0;
+		height: 40px;
+		line-height: 40px;
+		bottom: 5px;
+		color: var(--text-black-600);
 	}
 `;
 // export const PortfolioPopup = styled.div`
@@ -149,159 +198,167 @@ export const Portfolio = () => {
   }
 	return (
 		<>
-		<PortfolioSection>
-			<Container>
-				<Wrapper>
-					<SectionTitle className='section-title'>
-						<h2 data-heading='portfolio'>Latest works</h2>
-					</SectionTitle>
-				</Wrapper>
-				<Wrapper>
-					<PortfolioSectionFilter className='portfolio-filter'>
-						<PortfolioSectionFilterItem
-							className='filter-item outer-shadow active'
-							data-target='all'
-						>
-							all
-						</PortfolioSectionFilterItem>
-						<PortfolioSectionFilterItem
-							className='filter-item'
-							data-target='web-application'
-						>
-							web application
-						</PortfolioSectionFilterItem>
-						<PortfolioSectionFilterItem
-							className='filter-item'
-							data-target='web-design'
-						>
-							web design
-						</PortfolioSectionFilterItem>
-						<PortfolioSectionFilterItem
-							className='filter-item'
-							data-target='e-commerce'
-						>
-							e commerce
-						</PortfolioSectionFilterItem>
-					</PortfolioSectionFilter>
-				</Wrapper>
-				{/* PORTFOLIO ITEMS START */}
-				<Wrapper>
-					<PortfolioSectionItems className='portfolio-items'>
-						{/* PORTFOLIO ITEM START  1*/}
-						<PortfolioSectionItem
-							className='portfolio-item'
-							data-category='web-application'
-						>
-							<PortfolioSectionItemInner className='portfolio-item-inner outer-shadow'>
-								<PortfolioSectionItemImg className='portfolio-item-img'>
-									<img
-										src={QuizImg}
-										alt='Quiz-pic'
-										data-screenshots={`${QuizImg}, ${QuizImg}`}
-									/>
-									<span onClick={handleOpenQuiz} className='view-project'>
-										View project
-									</span>
-								</PortfolioSectionItemImg>
-								<PortfolioSectionItemTitle className='portfolio-item-title'>
-									Budgetary{ ' ' }
-								</PortfolioSectionItemTitle>
-								{/* PORTFOLIO ITEM DETAILS START */}
-								{openQuiz && <Quiz />}
-								{/* PORTFOLIO ITEM DETAILS END */}
-							</PortfolioSectionItemInner>
-						</PortfolioSectionItem>
-						{/* PORTFOLIO ITEM END */}
-						{/* PORTFOLIO ITEM START 2*/}
-						<PortfolioSectionItem
-							className='portfolio-item'
-							data-category='web-design'
-						>
-							<PortfolioSectionItemInner className='portfolio-item-inner outer-shadow'>
-								<PortfolioSectionItemImg className='portfolio-item-img'>
-									<img
-										src={QuizImg}
-										alt='Quiz-pic'
-										data-screenshots={`${QuizImg}, ${QuizImg}`}
-									/>
-									<span onClick={handleOpenQuiz} className='view-project'>
-										View project
-									</span>
-								</PortfolioSectionItemImg>
-								<PortfolioSectionItemTitle className='portfolio-item-title'>
-									Budgetary{' '}
-								</PortfolioSectionItemTitle>
-								{/* PORTFOLIO ITEM DETAILS START */}
-								{openQuiz && <Quiz />}
+			<PortfolioSection>
+				<Container>
+					<Wrapper>
+						<SectionTitle className='section-title'>
+							<h2 data-heading='portfolio'>Latest works</h2>
+						</SectionTitle>
+					</Wrapper>
+					<Wrapper>
+						<PortfolioSectionFilter className='portfolio-filter'>
+							<PortfolioSectionFilterItem
+								className='filter-item outer-shadow active'
+								data-target='all'
+							>
+								all
+							</PortfolioSectionFilterItem>
+							<PortfolioSectionFilterItem
+								className='filter-item'
+								data-target='web-application'
+							>
+								web application
+							</PortfolioSectionFilterItem>
+							<PortfolioSectionFilterItem
+								className='filter-item'
+								data-target='web-design'
+							>
+								web design
+							</PortfolioSectionFilterItem>
+							<PortfolioSectionFilterItem
+								className='filter-item'
+								data-target='e-commerce'
+							>
+								e commerce
+							</PortfolioSectionFilterItem>
+						</PortfolioSectionFilter>
+					</Wrapper>
+					{/* PORTFOLIO ITEMS START */}
+					<Wrapper>
+						<PortfolioSectionItems className='portfolio-items'>
+							{/* PORTFOLIO ITEM START  1*/}
+							<PortfolioSectionItem
+								className='portfolio-item'
+								data-category='web-application'
+							>
+								<PortfolioSectionItemInner className='portfolio-item-inner outer-shadow'>
+									<PortfolioSectionItemImg className='portfolio-item-img'>
+										<img
+											src={QuizImg}
+											alt='Quiz-pic'
+											data-screenshots={`${QuizImg}, ${QuizImg}`}
+										/>
+										<span onClick={handleOpenQuiz} className='view-project'>
+											View project
+										</span>
+									</PortfolioSectionItemImg>
+									<PortfolioSectionItemTitle className='portfolio-item-title'>
+										Budgetary{' '}
+									</PortfolioSectionItemTitle>
+									{/* PORTFOLIO ITEM DETAILS START */}
+									{openQuiz && <Quiz />}
+									{/* PORTFOLIO ITEM DETAILS END */}
+								</PortfolioSectionItemInner>
+							</PortfolioSectionItem>
+							{/* PORTFOLIO ITEM END */}
+							{/* PORTFOLIO ITEM START 2*/}
+							<PortfolioSectionItem
+								className='portfolio-item'
+								data-category='web-design'
+							>
+								<PortfolioSectionItemInner className='portfolio-item-inner outer-shadow'>
+									<PortfolioSectionItemImg className='portfolio-item-img'>
+										<img
+											src={QuizImg}
+											alt='Quiz-pic'
+											data-screenshots={`${QuizImg}, ${QuizImg}`}
+										/>
+										<span onClick={handleOpenQuiz} className='view-project'>
+											View project
+										</span>
+									</PortfolioSectionItemImg>
+									<PortfolioSectionItemTitle className='portfolio-item-title'>
+										Budgetary{' '}
+									</PortfolioSectionItemTitle>
+									{/* PORTFOLIO ITEM DETAILS START */}
+									{openQuiz && <Quiz />}
 
-								{/* PORTFOLIO ITEM DETAILS END */}
-							</PortfolioSectionItemInner>
-						</PortfolioSectionItem>
-						{/* PORTFOLIO ITEM END */}
-						{/* PORTFOLIO ITEM START 3 */}
-						<PortfolioSectionItem
-							className='portfolio-item'
-							data-category='e-commerce'
-						>
-							<PortfolioSectionItemInner className='portfolio-item-inner outer-shadow'>
-								<PortfolioSectionItemImg className='portfolio-item-img'>
-									<img
-										src={QuizImg}
-										alt='Quiz-pic'
-										data-screenshots={`${QuizImg}, ${QuizImg}`}
-									/>
-									<span onClick={handleOpenQuiz} className='view-project'>
-										View project
-									</span>
-								</PortfolioSectionItemImg>
-								<PortfolioSectionItemTitle className='portfolio-item-title'>
-									Budgetary{' '}
-								</PortfolioSectionItemTitle>
-								{/* PORTFOLIO ITEM DETAILS START */}
-								{openQuiz && <Quiz />}
+									{/* PORTFOLIO ITEM DETAILS END */}
+								</PortfolioSectionItemInner>
+							</PortfolioSectionItem>
+							{/* PORTFOLIO ITEM END */}
+							{/* PORTFOLIO ITEM START 3 */}
+							<PortfolioSectionItem
+								className='portfolio-item'
+								data-category='e-commerce'
+							>
+								<PortfolioSectionItemInner className='portfolio-item-inner outer-shadow'>
+									<PortfolioSectionItemImg className='portfolio-item-img'>
+										<img
+											src={QuizImg}
+											alt='Quiz-pic'
+											data-screenshots={`${QuizImg}, ${QuizImg}`}
+										/>
+										<span onClick={handleOpenQuiz} className='view-project'>
+											View project
+										</span>
+									</PortfolioSectionItemImg>
+									<PortfolioSectionItemTitle className='portfolio-item-title'>
+										Budgetary{' '}
+									</PortfolioSectionItemTitle>
+									{/* PORTFOLIO ITEM DETAILS START */}
+									{openQuiz && <Quiz />}
 
-								{/* PORTFOLIO ITEM DETAILS END */}
-							</PortfolioSectionItemInner>
-						</PortfolioSectionItem>
-						{/* PORTFOLIO ITEM END */}
-						{/* PORTFOLIO ITEM START 4*/}
-						<PortfolioSectionItem
-							className='portfolio-item'
-							data-category='web-application'
-						>
-							<PortfolioSectionItemInner className='portfolio-item-inner outer-shadow'>
-								<PortfolioSectionItemImg className='portfolio-item-img'>
-									<img
-										src={QuizImg}
-										alt='Quiz-pic'
-										data-screenshots={`${QuizImg}, ${QuizImg}`}
-									/>
-									<span onClick={handleOpenQuiz} className='view-project'>
-										View project
-									</span>
-								</PortfolioSectionItemImg>
-								<PortfolioSectionItemTitle className='portfolio-item-title'>
-									Budgetary{' '}
-								</PortfolioSectionItemTitle>
-								{/* PORTFOLIO ITEM DETAILS START */}
-								{openQuiz && <Quiz />}
+									{/* PORTFOLIO ITEM DETAILS END */}
+								</PortfolioSectionItemInner>
+							</PortfolioSectionItem>
+							{/* PORTFOLIO ITEM END */}
+							{/* PORTFOLIO ITEM START 4*/}
+							<PortfolioSectionItem
+								className='portfolio-item'
+								data-category='web-application'
+							>
+								<PortfolioSectionItemInner className='portfolio-item-inner outer-shadow'>
+									<PortfolioSectionItemImg className='portfolio-item-img'>
+										<img
+											src={QuizImg}
+											alt='Quiz-pic'
+											data-screenshots={`${QuizImg}, ${QuizImg}`}
+										/>
+										<span onClick={handleOpenQuiz} className='view-project'>
+											View project
+										</span>
+									</PortfolioSectionItemImg>
+									<PortfolioSectionItemTitle className='portfolio-item-title'>
+										Budgetary{' '}
+									</PortfolioSectionItemTitle>
+									{/* PORTFOLIO ITEM DETAILS START */}
+									{openQuiz && <Quiz />}
 
-								{/* PORTFOLIO ITEM DETAILS END */}
-							</PortfolioSectionItemInner>
-						</PortfolioSectionItem>
-						{/* PORTFOLIO ITEM END */}
-					</PortfolioSectionItems>
-				</Wrapper>
-				{/* PORTFOLIO ITEMS END */}
-			</Container>
+									{/* PORTFOLIO ITEM DETAILS END */}
+								</PortfolioSectionItemInner>
+							</PortfolioSectionItem>
+							{/* PORTFOLIO ITEM END */}
+						</PortfolioSectionItems>
+					</Wrapper>
+					{/* PORTFOLIO ITEMS END */}
+				</Container>
 			</PortfolioSection>
-			<PortfolioPopup className="pp portfolio-popup">
-				<PortfolioPopupMain className="pp-main">
-					<PortfolioPopupMainInner className="pp-main-inner">
-						<img src={QuizImg} alt="" className='pp-img outer-shadow' />
+			<PortfolioPopup className='pp portfolio-popup'>
+				<PortfolioPopupMain className='pp-main'>
+					<PortfolioPopupMainInner className='pp-main-inner'>
+						<div className='pp-project-details-btn outer-shadow  hover-in-shadow'>
+							Project Details
+							<Add />
+						</div>
+						<div className='pp-close outer-shadow  hover-in-shadow'>
+							<Close />
+						</div>
+						<img src={ QuizImg } alt='' className='pp-img outer-shadow ' />
+						<div className="pp-counter">1 of 6</div>
 					</PortfolioPopupMainInner>
 				</PortfolioPopupMain>
 			</PortfolioPopup>
-			</>
+		</>
 	);
 }
