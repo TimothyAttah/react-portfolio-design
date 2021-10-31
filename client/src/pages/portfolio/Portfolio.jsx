@@ -9,6 +9,7 @@ import { Covid } from '../../components/projects/covid-19/Covid';
 import { Add, ArrowLeft, ArrowRightOutlined, Close, Remove } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
 import { Projects } from '../../components/projects/Projects';
+import { Budgetary } from '../../components/projects/budgetary/Budgetary';
 
 
 export const PortfolioContainer = styled.div`
@@ -318,6 +319,7 @@ export const PortfolioSectionItemTitle = styled.p`
 
 export const Portfolio = () => {
   const [ openCovid, setOpenCovid ] = useState( false)
+  const [ openBudgetary, setOpenBudgetary ] = useState( false)
 	const [ open, setOpen ] = useState( false )
 	
 	const bodyScrollingToggle = () => {
@@ -326,6 +328,11 @@ export const Portfolio = () => {
 
   const handleOpenCovid = () => {
 		setOpenCovid( true );
+		bodyScrollingToggle()
+	}
+
+  const handleOpenBudgetary = () => {
+		setOpenBudgetary( true );
 		bodyScrollingToggle()
 	}
 	
@@ -515,7 +522,10 @@ export const Portfolio = () => {
 											alt='Quiz-pic'
 											data-screenshots={`${QuizImg}, ${QuizImg}`}
 										/>
-										<span onClick={handleOpen} className='view-project'>
+										<span
+											onClick={handleOpenBudgetary}
+											className='view-project'
+										>
 											View project
 										</span>
 									</PortfolioSectionItemImg>
@@ -553,11 +563,12 @@ export const Portfolio = () => {
 				</Container>
 			</PortfolioSection>
 
-			{/* PORTFOLIO ITEM DETAILS START */ }
-			
+			{/* PORTFOLIO ITEM DETAILS START */}
+
 			{open && <Quiz close={setOpen} />}
 
 			{openCovid && <Covid close={setOpenCovid} />}
+			{openBudgetary && <Budgetary close={setOpenBudgetary} />}
 			{/* {openCovid && <Projects close={setOpenCovid} />} */}
 
 			{/* PORTFOLIO ITEM DETAILS START */}

@@ -165,7 +165,6 @@ export const PortfolioPopupMainInner = styled.div`
 export const PortfolioPopupDetails = styled.div`
 	max-width: 1350px;
 	width: calc(85% + 30px);
-	/* width: 85%; */
 	margin: auto;
 	transition: all 0.5s ease;
 	&.pp-details.active {

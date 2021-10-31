@@ -67,3 +67,34 @@ export const covidItems = [
   },
   
 ]
+export const BudgetaryItems = [
+  {
+   img: budget1
+  },
+  {
+   img: budget2
+  },
+  {
+    img: budget3
+  },
+  {
+    img: budget4
+  },
+  {
+    img: budget5
+  },
+]
+export const AmazonItems = [
+  {
+   img:amazon1
+  },
+  {
+   img:amazon2
+  },
+  {
+    img:amazon3
+  },
+  {
+    img: amazon4
+  },
+]
