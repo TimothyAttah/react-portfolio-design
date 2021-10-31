@@ -5,6 +5,7 @@ import QuizImg from '../../../images/quiz/quiz-1.png';
 import { Link } from 'react-router-dom';
 import { Add, ArrowLeft, ArrowRightOutlined, Close, Remove } from '@material-ui/icons';
 import { quizItems, quizImages } from '../../images';
+import e from 'cors';
 
 
 
@@ -24,6 +25,35 @@ export const PortfolioPopup = styled.div`
 		display: block;
 		background-color: var(--bg-black-100);
 	}
+	.pp-loader {
+		position: fixed;
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		z-index: 1005;
+		background-color: var(--bg-opacity);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		visibility: hidden;
+		opacity: 0;
+		div{
+			height: 40px;
+			width: 40px;
+			border: 3px solid var(--skin-color);
+			border-radius: 50%;
+			border-right: 3px solid transparent;
+			animation: spin 2s linear infinite;
+		}
+	}
+	.pp-loader.active{
+		visibility: visible;
+		opacity: 1;
+	}
+	/* & .pp-details.active{
+		opacity: 1;
+	} */
 `;
 export const PortfolioPopupMain = styled.div`
 	min-height: 100vh;
@@ -127,6 +157,15 @@ export const PortfolioPopupDetails = styled.div`
 	/* max-height: 0;
 	overflow: hidden;
 	opacity: 0; */
+	transition: all 0.5s ease;
+	&.pp-details.active {
+		opacity: 1;
+	}
+	/* .pp-details {
+	&.active {
+			opacity: 1;
+		}
+	} */
 `;
 export const PortfolioPopupDetailsInner = styled.div`
 	padding: 30px 0;
@@ -149,6 +188,7 @@ export const PortfolioPopupTitle = styled.div`
 		padding-bottom: 10px;
 		span{
 			font-weight: 400;
+			text-transform: capitalize;
 		}
 	}
 `;
@@ -238,58 +278,18 @@ export const Quiz = ({close}) => {
 		}
 	};
 
+	const popupSlideshow = () => {
 
+	}
 
-	useEffect( () => {
-		 
-	const popup = document.querySelector('.pp-main'),
-		prevBtn = document.querySelector('.pp-prev'),
-		nextBtn = document.querySelector('.pp-next'),
-		closeBtn = document.querySelector('.pp-close'),
-		projectDetailsContainer = popup.querySelector('.pp-details'),
-		projectDetailsBtn = popup.querySelector('.pp-project-details-btn');
-
-const portfolioItems = document.querySelector('.pp-main-inner');
-
-		let itemIndex, slideIndex, screenshots;
-
-
-		// popup.addEventListener( 'click', ( e ) => {
-		// 	if (e.target.closest('.pp-main-inner')) {
-		// 		const portfolioItem = e.target.closest('.pp-main-inner').parentElement;
-		// 		itemIndex = Array.from(portfolioItem.parentElement.children).indexOf(
-		// 			portfolioItem
-		// 		);
-		// 		screenshots = portfolioItems
-		// 					.querySelector('.portfolio-item-img img')
-		// 					.getAttribute('data-screenshots');
-		// 	}
-		// } )
-		
-
-
-		// portfolioItemsContainer.addEventListener('click', e => {
-		// 	if (e.target.closest('.portfolio-item-inner')) {
-		// 		const portfolioItem = e.target.closest(
-		// 			'.portfolio-item-inner'
-		// 		).parentElement;
-		// 		itemIndex = Array.from(portfolioItem.parentElement.children).indexOf(
-		// 			portfolioItem
-		// 		);
-		// 		screenshots = portfolioItems[itemIndex]
-		// 			.querySelector('.portfolio-item-img img')
-		// 			.getAttribute('data-screenshots');
-		// 		// convert screenshots into array
-		// 		screenshots = screenshots.split(',');
-		// 		slideIndex = 0;
-		// 		popupToggle();
-		// 	}
-		// });
-
-
-	}, [] )
 	
 	useEffect( () => {
+		const popup = document.querySelector('.portfolio-popup'),
+			prevBtn = document.querySelector('.pp-prev'),
+			nextBtn = document.querySelector('.pp-next'),
+			closeBtn = document.querySelector('.pp-close'),
+			projectDetailsContainer = popup.querySelector('.pp-details'),
+			projectDetailsBtn = popup.querySelector('.pp-project-details-btn');
 		const portfolioItems = document.querySelector('.pp-main');
 
 		let itemIndex, slideIndex, screenshots;
@@ -298,7 +298,64 @@ const portfolioItems = document.querySelector('.pp-main-inner');
 			.getAttribute('data-screenshots');
 		// convert screenshots into array
 				screenshots = screenshots.split(',');
-		console.log(screenshots);
+		if ( screenshots.length === 1 ) {
+			prevBtn.style.display = 'none';
+			nextBtn.style.display = 'none';
+		} else {
+				prevBtn.style.display = 'block';
+				nextBtn.style.display = 'block';
+	}
+			slideIndex = 0;
+		
+		const popupSlideshow = () => {
+			const imgSrc = screenshots[ slideIndex ]
+			const popupImg = popup.querySelector( '.pp-img' );
+		popup.querySelector('.pp-loader').classList.add('active')
+			popupImg.src = imgSrc
+			popupImg.onload = () => {
+					popup.querySelector('.pp-loader').classList.remove('active');
+			}
+			popup.querySelector('.pp-counter').innerHTML = (slideIndex +1 ) + " of " + screenshots.length
+		};
+
+		nextBtn.addEventListener( 'click', () => {
+			if ( slideIndex === screenshots.length - 1 ) {
+				slideIndex = 0
+			}
+			else {
+				slideIndex++;
+			}
+			popupSlideshow()
+		} )
+		
+		prevBtn.addEventListener( 'click', () => {
+			if ( slideIndex === 0 ) {
+				slideIndex = screenshots.length - 1;
+			}
+			else {
+				slideIndex--;
+			}
+			popupSlideshow()
+		} )
+
+		projectDetailsBtn.addEventListener( 'click', () => {
+			// popupDetailsToggle()
+		})
+		
+		function popupDetailsToggle() {
+			if ( projectDetailsContainer.classList.contains( 'active' ) ) {
+					projectDetailsContainer.classList.remove('active');
+					projectDetailsContainer.style.maxHeight = 0 + 'px'
+ 			} else {
+				projectDetailsContainer.classList.add( 'active' );
+				projectDetailsContainer.style.maxHeight = projectDetailsContainer.scrollHeight + 'px';
+				popup.scrollTo(0, projectDetailsContainer.offsetTop)
+			}
+
+		}
+
+		popupSlideshow()
+		
 	},[])
 
   return (
@@ -391,28 +448,11 @@ const portfolioItems = document.querySelector('.pp-main-inner');
 							data-screenshots={`${quizImages.quiz1}, ${quizImages.quiz2}, ${quizImages.quiz3}, ${quizImages.quiz4}`}
 						/>
 
-						{/* <ImageWrapper slideIndex={slideIndex}>
-							{quizItems.map(item => (
-								<Slide>
-									<ImageContainer>
-										<Image
-											src={item.img}
-											alt=''
-											className='pp-img outer-shadow '
-										/>
-									</ImageContainer>
-								</Slide>
-							))}
-						</ImageWrapper> */}
-
-						{/* { quizItems.map( item => (
-							
-						<img src={ item } alt='' className='pp-img outer-shadow ' />
-						))}
-						 */}
-
 						<div className='pp-counter'>1 of 6</div>
 					</PortfolioPopupMainInner>
+					<div className='pp-loader'>
+						<div></div>
+					</div>
 					<div className='pp-prev'>
 						<ArrowLeft />
 					</div>
