@@ -239,29 +239,6 @@ export const PortfolioPopupProjectsDetails = styled.div`
 `;
 
 
-export const ImageWrapper = styled.div`
-	/* height: 100%; */
-	display: flex;
-	transition: all 1.5s ease;
-	/* transform: translateX(${props => props.slideIndex * -100}vw); */
-`;
-
-export const Slide = styled.div`
-	/* width: 100vw; */
-	/* height: 100vh; */
-	display: flex;
-	align-items: center;
-	/* background-color: #${props => props.bg}; */
-`;
-export const ImageContainer = styled.div`
-	/* height: 100%; */
-	/* flex: 1; */
-`;
-
-export const Image = styled.img`
-	/* height: 80%; */
-`;
-
 export const Quiz = ({close}) => {
 	const [ openDetails, setOpenDetails ] = useState( false )
 	
@@ -269,14 +246,6 @@ export const Quiz = ({close}) => {
 		setOpenDetails(!openDetails)
 	}
 
-	const [slideIndex, setSlideIndex] = useState(0);
-	const handleClick = direction => {
-		if (direction === 'left') {
-			setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2);
-		} else {
-			setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
-		}
-	};
 
 	const popupSlideshow = () => {
 
@@ -287,12 +256,11 @@ export const Quiz = ({close}) => {
 		const popup = document.querySelector('.portfolio-popup'),
 			prevBtn = document.querySelector('.pp-prev'),
 			nextBtn = document.querySelector('.pp-next'),
-			closeBtn = document.querySelector('.pp-close'),
 			projectDetailsContainer = popup.querySelector('.pp-details'),
 			projectDetailsBtn = popup.querySelector('.pp-project-details-btn');
 		const portfolioItems = document.querySelector('.pp-main');
 
-		let itemIndex, slideIndex, screenshots;
+		let slideIndex, screenshots;
 		screenshots = portfolioItems
 			.querySelector('.pp-main-inner img')
 			.getAttribute('data-screenshots');

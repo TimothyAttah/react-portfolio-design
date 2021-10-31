@@ -55,3 +55,15 @@ export const quizItems = [
    img: quiz4
   },
 ]
+export const covidItems = [
+  {
+   img: covid1
+  },
+  {
+   img: covid2
+  },
+  {
+    img: covid3
+  },
+  
+]

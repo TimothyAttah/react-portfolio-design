@@ -8,6 +8,7 @@ import { images, quizImages, covidImages } from '../../components/images';
 import { Covid } from '../../components/projects/covid-19/Covid';
 import { Add, ArrowLeft, ArrowRightOutlined, Close, Remove } from '@material-ui/icons';
 import { Link } from 'react-router-dom';
+import { Projects } from '../../components/projects/Projects';
 
 
 export const PortfolioContainer = styled.div`
@@ -551,106 +552,14 @@ export const Portfolio = () => {
 					{/* PORTFOLIO ITEMS END */}
 				</Container>
 			</PortfolioSection>
+
 			{/* PORTFOLIO ITEM DETAILS START */ }
 			
 			{open && <Quiz close={setOpen} />}
 
 			{openCovid && <Covid close={setOpenCovid} />}
+			{/* {openCovid && <Projects close={setOpenCovid} />} */}
 
-			{/* <PortfolioPopup className='pp portfolio-popup'>
-				{openDetails && (
-					<PortfolioPopupDetails>
-						<PortfolioPopupDetailsInner>
-							<PortfolioPopupTitle>
-								<h2>Personal portfolio</h2>
-								<p>
-									Category -
-									<span className='pp-project-category'>Web Application</span>
-								</p>
-							</PortfolioPopupTitle>
-							<PortfolioPopupProjectsDetails className='pp-project-details'>
-								<Wrapper>
-									<div className='description'>
-										<h3>Project Brief:</h3>
-										<p>
-											Lorem ipsum dolor sit amet consectetur adipisicing elit.
-											Est totam placeat quasi, accusamus iure reprehenderit
-											saepe ipsa dicta ipsam doloribus, excepturi vitae, quia
-											facere sit enim corrupti repellendus consequuntur porro!
-										</p>
-									</div>
-									<div className='info'>
-										<h3>Project Info</h3>
-										<ul>
-											<li>
-												Date - <span>2021</span>
-											</li>
-											<li>
-												Source Code -{' '}
-												<span>
-													<Link
-														to='https://github.com/TimothyAttah/Budgets-Tracker'
-														target='_blank'
-														className='outer-shadow'
-													>
-														Budgetary
-													</Link>
-												</span>
-											</li>
-											<li>
-												Tools -{' '}
-												<span>Postgres, Sql, Express, React, NodeJs, Jwt</span>
-											</li>
-											<li>
-												Live Demo -{' '}
-												<span>
-													<Link
-														to='www.budgetary.netlify.com'
-														target='_blank'
-														className='outer-shadow'
-													>
-														Budgetary
-													</Link>
-												</span>
-											</li>
-										</ul>
-									</div>
-								</Wrapper>
-							</PortfolioPopupProjectsDetails>
-						</PortfolioPopupDetailsInner>
-					</PortfolioPopupDetails>
-				)}
-				<div className='separator'></div>
-
-				<PortfolioPopupMain className='pp-main'>
-					<PortfolioPopupMainInner className='pp-main-inner'>
-						<div
-							onClick={handleOpenDetails}
-							className='pp-project-details-btn outer-shadow  hover-in-shadow'
-						>
-							Project Details
-							{openDetails ? <Remove /> : <Add />}
-						</div>
-						<div className='pp-close outer-shadow  hover-in-shadow'>
-							<Close />
-						</div>
-
-						<img
-							src={covidImages.covid1}
-							alt=''
-							className='pp-img outer-shadow '
-						/>
-
-						<div className='pp-counter'>1 of 6</div>
-					</PortfolioPopupMainInner>
-					<div className='pp-prev'>
-						<ArrowLeft />
-					</div>
-					<div className='pp-next'>
-						<ArrowRightOutlined />
-					</div>
-				</PortfolioPopupMain>
-			</PortfolioPopup> */}
 			{/* PORTFOLIO ITEM DETAILS START */}
 		</PortfolioContainer>
 	);
