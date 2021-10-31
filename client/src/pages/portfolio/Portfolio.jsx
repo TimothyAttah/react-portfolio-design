@@ -10,6 +10,7 @@ import { Add, ArrowLeft, ArrowRightOutlined, Close, Remove } from '@material-ui/
 import { Link } from 'react-router-dom';
 import { Projects } from '../../components/projects/Projects';
 import { Budgetary } from '../../components/projects/budgetary/Budgetary';
+import { Amazon } from '../../components/projects/amazon/Amazon';
 
 
 export const PortfolioContainer = styled.div`
@@ -320,6 +321,7 @@ export const PortfolioSectionItemTitle = styled.p`
 export const Portfolio = () => {
   const [ openCovid, setOpenCovid ] = useState( false)
   const [ openBudgetary, setOpenBudgetary ] = useState( false)
+  const [ openAmazon, setOpenAmazon ] = useState( false)
 	const [ open, setOpen ] = useState( false )
 	
 	const bodyScrollingToggle = () => {
@@ -328,6 +330,11 @@ export const Portfolio = () => {
 
   const handleOpenCovid = () => {
 		setOpenCovid( true );
+		bodyScrollingToggle()
+	}
+
+  const handleOpenAmazon = () => {
+		setOpenAmazon( true );
 		bodyScrollingToggle()
 	}
 
@@ -547,12 +554,12 @@ export const Portfolio = () => {
 											alt='Quiz-pic'
 											data-screenshots={`${QuizImg}, ${QuizImg}`}
 										/>
-										<span onClick={handleOpen} className='view-project'>
+										<span onClick={handleOpenAmazon} className='view-project'>
 											View project
 										</span>
 									</PortfolioSectionItemImg>
 									<PortfolioSectionItemTitle className='portfolio-item-title'>
-										Amazon Clone
+										Amazon Clone Demo App
 									</PortfolioSectionItemTitle>
 								</PortfolioSectionItemInner>
 							</PortfolioSectionItem>
@@ -569,6 +576,7 @@ export const Portfolio = () => {
 
 			{openCovid && <Covid close={setOpenCovid} />}
 			{openBudgetary && <Budgetary close={setOpenBudgetary} />}
+			{openAmazon && <Amazon close={setOpenAmazon} />}
 			{/* {openCovid && <Projects close={setOpenCovid} />} */}
 
 			{/* PORTFOLIO ITEM DETAILS START */}
