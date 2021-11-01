@@ -84,6 +84,10 @@ img {
   vertical-align: middle;
   max-width: 100%;
 }
+button{
+  outline: none;
+  border: none;
+}
 
 .container {
   max-width: 1140px;

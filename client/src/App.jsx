@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import { Slider } from './components/slider/Slider';
 import { About } from './pages/about/About';
 import { AllPages } from './pages/AllPages';
+import { Contact } from './pages/contact/Contact';
 import { Home } from './pages/home/Home';
 import { Portfolio } from './pages/portfolio/Portfolio';
 import { Service } from './pages/service/Service';
@@ -19,6 +19,7 @@ export const App = () => {
 						<About />
 						<Service />
 						<Portfolio />
+						<Contact />
 					</Route>
 					<Route exact path='/home'>
 						<AllPages />
@@ -36,9 +37,9 @@ export const App = () => {
 						<AllPages />
 						<Portfolio />
 					</Route>
-					<Route exact path='/slider'>
+					<Route exact path='/contact'>
 						<AllPages />
-						<Slider />
+						<Contact />
 					</Route>
 				</div>
 			</Switch>
