@@ -10,6 +10,9 @@ export const PortfolioPopup = styled.div`
 	z-index: 1000;
 	overflow-y: auto;
 	transition: all 0.3s ease;
+	::-webkit-scrollbar {
+		display: none;
+	}
 	.separator {
 		height: 1px;
 		width: 100%;

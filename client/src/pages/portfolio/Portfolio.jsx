@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import { Wrapper, Container, SectionTitle } from '../../styles/globalStyles';
-import { portfolioList } from '../../components/Helper';
+import { portfolioList, portfolioListItem } from '../../components/Helper';
 import { Quiz } from '../../components/projects/quiz/Quiz';
 
 import { Covid } from '../../components/projects/covid-19/Covid';
@@ -34,25 +34,25 @@ export const Portfolio = () => {
 	const handleOpen = ( direction) => {
 		if ( direction === 'covid19' ) {
 			setOpenCovid( true )
-			bodyScrollingToggle();
+			// bodyScrollingToggle();
 		}
 		else if ( direction === 'quiz' ) {
 			setOpenQuiz( true )
-			bodyScrollingToggle();
+			// bodyScrollingToggle();
 		}
 		else if ( direction === 'onlineMagazine' ) {
 			setOpenOnlineMagazine( true )
-			bodyScrollingToggle();
+			// bodyScrollingToggle();
 		}
 		else if ( direction === 'budgetary' ) {
 			setOpenBudgetary( true )
-			bodyScrollingToggle();
+			// bodyScrollingToggle();
 		}
 		else {
 			setOpenAmazon( true );
-			bodyScrollingToggle();
+			// bodyScrollingToggle();
 		}
-		 bodyScrollingToggle();
+		//  bodyScrollingToggle();
 	}
 
 

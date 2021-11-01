@@ -52,6 +52,9 @@ body {
   background-color: var(--bg-black-50);
   border: 2px solid red;
   /* overflow-y: hidden; */
+  ::-webkit-scrollbar {
+		display: none;
+	}
 }
 body.stop-scrolling{
   overflow-y:hidden;
