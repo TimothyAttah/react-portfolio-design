@@ -21,6 +21,7 @@ export const Portfolio = () => {
   const [ openCovid, setOpenCovid ] = useState( false)
   const [ openBudgetary, setOpenBudgetary ] = useState( false)
   const [ openAmazon, setOpenAmazon ] = useState( false)
+  const [ openQuiz, setOpenQuiz ] = useState( false)
 	const [ open, setOpen ] = useState( false )
 	
 	const bodyScrollingToggle = () => {
@@ -29,6 +30,11 @@ export const Portfolio = () => {
 
   const handleOpenCovid = () => {
 		setOpenCovid( true );
+		bodyScrollingToggle()
+	}
+
+  const handleOpenQuiz = () => {
+		setOpenQuiz( true );
 		bodyScrollingToggle()
 	}
 
@@ -91,30 +97,6 @@ export const Portfolio = () => {
 			}
 		})
 
-
-		// portfolioItemsContainer.addEventListener( 'click', ( e ) => {
-		// 	if (e.target.closest('.portfolio-item-inner')) {
-		// 		const portfolioItem = e.target.closest(
-		// 			'.portfolio-item-inner'
-		// 		).parentElement;
-		// 		itemIndex = Array.from(portfolioItem.parentElement.children).indexOf(
-		// 			portfolioItem
-		// 		);
-		// 		screenshots = portfolioItems[itemIndex]
-		// 			.querySelector('.portfolio-item-img img')
-		// 			.getAttribute( 'data-screenshots' );
-		// 			// convert screenshots into array
-		// 			screenshots = screenshots.split(',');
-		// 		slideIndex = 0
-		// 		popupToggle();
-		// 	}
-		// })
-
-		function popupToggle() {
-			// popup.classList.toggle( '.open' );
-		}
-
-
 	},[])
 	return (
 		<PortfolioContainer>
@@ -167,14 +149,13 @@ export const Portfolio = () => {
 										<img
 											src={quizImages.quiz1}
 											alt='Quiz-pic'
-											data-screenshots={`${quizImages.quiz1}, ${quizImages.quiz2}, ${quizImages.quiz3}, ${quizImages.quiz4}`}
 										/>
-										<span onClick={handleOpen} className='view-project'>
+										<span onClick={handleOpenQuiz} className='view-project'>
 											View project
 										</span>
 									</PortfolioSectionItemImg>
 									<PortfolioSectionItemTitle className='portfolio-item-title'>
-										Quiz App
+										Quiz Game Application
 									</PortfolioSectionItemTitle>
 
 									{/* PORTFOLIO ITEM DETAILS START */}
@@ -212,7 +193,7 @@ export const Portfolio = () => {
 							{/* PORTFOLIO ITEM START 3 */}
 							<PortfolioSectionItem
 								className='portfolio-item'
-								data-category='e-commerce'
+								data-category='web-application'
 							>
 								<PortfolioSectionItemInner className='portfolio-item-inner outer-shadow'>
 									<PortfolioSectionItemImg className='portfolio-item-img'>
@@ -236,7 +217,7 @@ export const Portfolio = () => {
 							{/* PORTFOLIO ITEM START 4*/}
 							<PortfolioSectionItem
 								className='portfolio-item'
-								data-category='web-application'
+								data-category='e-commerce'
 							>
 								<PortfolioSectionItemInner className='portfolio-item-inner outer-shadow'>
 									<PortfolioSectionItemImg className='portfolio-item-img'>
@@ -262,8 +243,7 @@ export const Portfolio = () => {
 
 			{/* PORTFOLIO ITEM DETAILS START */}
 
-			{open && <Quiz close={setOpen} />}
-
+			{openQuiz && <Quiz close={setOpenQuiz} />}
 			{openCovid && <Covid close={setOpenCovid} />}
 			{openBudgetary && <Budgetary close={setOpenBudgetary} />}
 			{openAmazon && <Amazon close={setOpenAmazon} />}
