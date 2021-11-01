@@ -249,8 +249,6 @@ export const Quiz = ({ close }) => {
 		setOpenDetails(!openDetails);
 	};
 
-	const popupSlideshow = () => {};
-
 	useEffect(() => {
 		const popup = document.querySelector('.portfolio-popup'),
 			prevBtn = document.querySelector('.pp-prev'),

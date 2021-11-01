@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import { Wrapper, Container, SectionTitle } from '../../styles/globalStyles';
-import { portfolioList, portfolioListItem } from '../../components/Helper';
+import { portfolioList } from '../../components/Helper';
 import { Quiz } from '../../components/projects/quiz/Quiz';
 
 import { Covid } from '../../components/projects/covid-19/Covid';
@@ -23,36 +23,29 @@ export const Portfolio = () => {
   const [ openAmazon, setOpenAmazon ] = useState( false)
   const [ openQuiz, setOpenQuiz ] = useState( false)
   const [ openOnlineMagazine, setOpenOnlineMagazine ] = useState( false)
-	const [ open, setOpen ] = useState( false )
 	
-	const bodyScrollingToggle = () => {
-		document.body.classList.toggle('stop-scrolling')
-	}
+	// const bodyScrollingToggle = () => {
+	// 	document.body.classList.toggle('stop-scrolling')
+	// }
 
   
 	
 	const handleOpen = ( direction) => {
 		if ( direction === 'covid19' ) {
 			setOpenCovid( true )
-			// bodyScrollingToggle();
 		}
 		else if ( direction === 'quiz' ) {
 			setOpenQuiz( true )
-			// bodyScrollingToggle();
 		}
 		else if ( direction === 'onlineMagazine' ) {
 			setOpenOnlineMagazine( true )
-			// bodyScrollingToggle();
 		}
 		else if ( direction === 'budgetary' ) {
 			setOpenBudgetary( true )
-			// bodyScrollingToggle();
 		}
 		else {
 			setOpenAmazon( true );
-			// bodyScrollingToggle();
 		}
-		//  bodyScrollingToggle();
 	}
 
 
@@ -160,7 +153,6 @@ export const Portfolio = () => {
 			{openBudgetary && <Budgetary close={setOpenBudgetary} />}
 			{openAmazon && <Amazon close={setOpenAmazon} />}
 			{openOnlineMagazine && <OnlineMagazine close={setOpenOnlineMagazine} />}
-			{/* {openCovid && <Projects close={setOpenCovid} />} */}
 
 			{/* PORTFOLIO ITEM DETAILS START */}
 		</PortfolioContainer>
