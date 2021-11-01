@@ -59,12 +59,6 @@ export const Portfolio = () => {
 		const filterContainer = document.querySelector( '.portfolio-filter' ),
 			portfolioItemsContainer = document.querySelector( '.portfolio-items' ),
 			portfolioItems = document.querySelectorAll( '.portfolio-item' );
-			// popup = document.querySelector( '.portfolio-popup' ),
-				// prevBtn = document.querySelector('.pp-prev'),
-				// nextBtn = document.querySelector('.pp-next'),
-				// closeBtn = document.querySelector('.pp-close'),
-				// projectDetailsContainer = popup.querySelector('.pp-details'),
-				// projectDetailsBtn = popup.querySelector('.pp-project-details-btn');
 
 		let itemIndex, slideIndex, screenshots;
 		
@@ -98,23 +92,23 @@ export const Portfolio = () => {
 		})
 
 
-		portfolioItemsContainer.addEventListener( 'click', ( e ) => {
-			if (e.target.closest('.portfolio-item-inner')) {
-				const portfolioItem = e.target.closest(
-					'.portfolio-item-inner'
-				).parentElement;
-				itemIndex = Array.from(portfolioItem.parentElement.children).indexOf(
-					portfolioItem
-				);
-				screenshots = portfolioItems[itemIndex]
-					.querySelector('.portfolio-item-img img')
-					.getAttribute( 'data-screenshots' );
-					// convert screenshots into array
-					screenshots = screenshots.split(',');
-				slideIndex = 0
-				popupToggle();
-			}
-		})
+		// portfolioItemsContainer.addEventListener( 'click', ( e ) => {
+		// 	if (e.target.closest('.portfolio-item-inner')) {
+		// 		const portfolioItem = e.target.closest(
+		// 			'.portfolio-item-inner'
+		// 		).parentElement;
+		// 		itemIndex = Array.from(portfolioItem.parentElement.children).indexOf(
+		// 			portfolioItem
+		// 		);
+		// 		screenshots = portfolioItems[itemIndex]
+		// 			.querySelector('.portfolio-item-img img')
+		// 			.getAttribute( 'data-screenshots' );
+		// 			// convert screenshots into array
+		// 			screenshots = screenshots.split(',');
+		// 		slideIndex = 0
+		// 		popupToggle();
+		// 	}
+		// })
 
 		function popupToggle() {
 			// popup.classList.toggle( '.open' );
@@ -200,7 +194,6 @@ export const Portfolio = () => {
 										<img
 											src={covidImages.covid1}
 											alt='Quiz-pic'
-											data-screenshots={`${covidImages.covid1}, ${covidImages.covid2}, ${covidImages.covid3}`}
 										/>
 										<span onClick={handleOpenCovid} className='view-project'>
 											View project
@@ -226,7 +219,6 @@ export const Portfolio = () => {
 										<img
 											src={images.budget1}
 											alt='Quiz-pic'
-											data-screenshots={`${QuizImg}, ${QuizImg}`}
 										/>
 										<span
 											onClick={handleOpenBudgetary}
@@ -251,7 +243,6 @@ export const Portfolio = () => {
 										<img
 											src={images.amazon1}
 											alt='Quiz-pic'
-											data-screenshots={`${QuizImg}, ${QuizImg}`}
 										/>
 										<span onClick={handleOpenAmazon} className='view-project'>
 											View project
