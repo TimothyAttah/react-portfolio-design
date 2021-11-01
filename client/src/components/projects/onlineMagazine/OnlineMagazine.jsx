@@ -7,7 +7,7 @@ import {
 	Close,
 	Remove,
 } from '@material-ui/icons';
-import { quizItems } from '../../images';
+import { OnlineMagazineItems } from '../../images';
 
 import {
 	PortfolioPopup,
@@ -15,9 +15,9 @@ import {
 	PortfolioPopupMainInner,
 	Loader,
 } from '../ProjectsStyles';
-import { QuizDetails } from './QuizDetails';
+import { OnlineMagazineDetails } from './OnlineMagazineDetails';
 
-export const Quiz = ({ close }) => {
+export const OnlineMagazine = ({ close }) => {
 	const [openDetails, setOpenDetails] = useState(false);
 	let [slideIndex, setSlideIndex] = useState(0);
 	const handleOpenDetails = () => {
@@ -26,14 +26,14 @@ export const Quiz = ({ close }) => {
 
 	const [loader, setLoader] = useState(false);
 
-	const imgSrc = quizItems[slideIndex];
+	const imgSrc = OnlineMagazineItems[slideIndex];
 
 	console.log(imgSrc?.img);
 
 	const handleNextBtn = () => {
-		if (slideIndex > quizItems.length - 1) {
+		if (slideIndex > OnlineMagazineItems.length - 1) {
 			setSlideIndex(0);
-			setLoader(true)
+			setLoader(true);
 		} else {
 			setSlideIndex(slideIndex++);
 			setLoader(true);
@@ -44,7 +44,7 @@ export const Quiz = ({ close }) => {
 	const handlePrevBtn = () => {
 		if (slideIndex === 0) {
 			// setSlideIndex(0);
-			setSlideIndex((slideIndex = quizItems.length - 1));
+			setSlideIndex((slideIndex = OnlineMagazineItems.length - 1));
 		} else {
 			setSlideIndex(slideIndex--);
 			setLoader(true);
@@ -58,7 +58,7 @@ export const Quiz = ({ close }) => {
 	return (
 		<>
 			<PortfolioPopup className='pp portfolio-popup'>
-				{openDetails && <QuizDetails />}
+				{openDetails && <OnlineMagazineDetails />}
 				<div className='separator'></div>
 
 				<PortfolioPopupMain className='pp-main'>
@@ -80,7 +80,7 @@ export const Quiz = ({ close }) => {
 						<img src={imgSrc?.img} alt='' className='pp-img outer-shadow ' />
 
 						<div className='pp-counter'>{`${slideIndex + 1} of ${
-							quizItems.length
+							OnlineMagazineItems.length
 						}`}</div>
 					</PortfolioPopupMainInner>
 					{loader && (
@@ -88,7 +88,7 @@ export const Quiz = ({ close }) => {
 							<div></div>
 						</Loader>
 					)}
-					{quizItems.length > 1 && (
+					{OnlineMagazineItems.length > 1 && (
 						<>
 							<div onClick={handlePrevBtn} className='pp-prev'>
 								<ArrowLeft />

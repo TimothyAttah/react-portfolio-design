@@ -89,3 +89,8 @@ export const AmazonItems = [
     img: amazon4
   },
 ]
+export const OnlineMagazineItems = [
+  {
+   img:onlineMagazine2
+  }
+]

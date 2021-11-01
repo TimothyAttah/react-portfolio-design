@@ -15,6 +15,7 @@ import {
   PortfolioSectionItemImg,
 	PortfolioSectionItemInner, PortfolioSectionItemTitle, PortfolioSectionItems
 } from './PortfolioStyles'
+import { OnlineMagazine } from '../../components/projects/onlineMagazine/OnlineMagazine';
 
 
 export const Portfolio = () => {
@@ -22,6 +23,7 @@ export const Portfolio = () => {
   const [ openBudgetary, setOpenBudgetary ] = useState( false)
   const [ openAmazon, setOpenAmazon ] = useState( false)
   const [ openQuiz, setOpenQuiz ] = useState( false)
+  const [ openOnlineMagazine, setOpenOnlineMagazine ] = useState( false)
 	const [ open, setOpen ] = useState( false )
 	
 	const bodyScrollingToggle = () => {
@@ -30,6 +32,10 @@ export const Portfolio = () => {
 
   const handleOpenCovid = () => {
 		setOpenCovid( true );
+		bodyScrollingToggle()
+	}
+  const handleOpenOnlineMagazine = () => {
+		setOpenOnlineMagazine( true );
 		bodyScrollingToggle()
 	}
 
@@ -214,6 +220,30 @@ export const Portfolio = () => {
 								</PortfolioSectionItemInner>
 							</PortfolioSectionItem>
 							{/* PORTFOLIO ITEM END */}
+							{/* PORTFOLIO ITEM START 4 */}
+							<PortfolioSectionItem
+								className='portfolio-item'
+								data-category='web-application'
+							>
+								<PortfolioSectionItemInner className='portfolio-item-inner outer-shadow'>
+									<PortfolioSectionItemImg className='portfolio-item-img'>
+										<img
+											src={images.onlineMagazine1}
+											alt='Quiz-pic'
+										/>
+										<span
+											onClick={handleOpenOnlineMagazine}
+											className='view-project'
+										>
+											View project
+										</span>
+									</PortfolioSectionItemImg>
+									<PortfolioSectionItemTitle className='portfolio-item-title'>
+										Online Magazine
+									</PortfolioSectionItemTitle>
+								</PortfolioSectionItemInner>
+							</PortfolioSectionItem>
+							{/* PORTFOLIO ITEM END */}
 							{/* PORTFOLIO ITEM START 4*/}
 							<PortfolioSectionItem
 								className='portfolio-item'
@@ -247,6 +277,7 @@ export const Portfolio = () => {
 			{openCovid && <Covid close={setOpenCovid} />}
 			{openBudgetary && <Budgetary close={setOpenBudgetary} />}
 			{openAmazon && <Amazon close={setOpenAmazon} />}
+			{openOnlineMagazine && <OnlineMagazine close={setOpenOnlineMagazine} />}
 			{/* {openCovid && <Projects close={setOpenCovid} />} */}
 
 			{/* PORTFOLIO ITEM DETAILS START */}
