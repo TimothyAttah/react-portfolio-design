@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import { StyleSwitcher } from './components/styleSwitcher/StyleSwitcher';
 import { About } from './pages/about/About';
 import { AllPages } from './pages/AllPages';
 import { Contact } from './pages/contact/Contact';
@@ -7,15 +8,19 @@ import { Home } from './pages/home/Home';
 import { Portfolio } from './pages/portfolio/Portfolio';
 import { Service } from './pages/service/Service';
 
+
+
+
 export const App = () => {
   return (
 		<Router>
 			{/* <AllPages /> */}
+
 			<Switch>
 				<div style={{ marginTop: '100px' }}>
 					<Route exact path='/'>
 						<AllPages />
-            <Home />
+						<Home />
 						<About />
 						<Service />
 						<Portfolio />
@@ -43,6 +48,7 @@ export const App = () => {
 					</Route>
 				</div>
 			</Switch>
+			<StyleSwitcher />
 		</Router>
 	);
 }
