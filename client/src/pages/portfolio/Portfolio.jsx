@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 
 import { Wrapper, Container, SectionTitle } from '../../styles/globalStyles';
-import QuizImg from '../../images/quiz/quiz-1.png'
+import { portfolioList } from '../../components/Helper';
 import { Quiz } from '../../components/projects/quiz/Quiz';
 
-import { images } from '../../components/images';
 import { Covid } from '../../components/projects/covid-19/Covid';
 import { Budgetary } from '../../components/projects/budgetary/Budgetary';
 import { Amazon } from '../../components/projects/amazon/Amazon';
@@ -30,51 +29,37 @@ export const Portfolio = () => {
 		document.body.classList.toggle('stop-scrolling')
 	}
 
-  const handleOpenCovid = () => {
-		setOpenCovid( true );
-		bodyScrollingToggle()
-	}
-  const handleOpenOnlineMagazine = () => {
-		setOpenOnlineMagazine( true );
-		bodyScrollingToggle()
-	}
-
-  const handleOpenQuiz = () => {
-		setOpenQuiz( true );
-		bodyScrollingToggle()
-	}
-
-  const handleOpenAmazon = () => {
-		setOpenAmazon( true );
-		bodyScrollingToggle()
-	}
-
-  const handleOpenBudgetary = () => {
-		setOpenBudgetary( true );
-		bodyScrollingToggle()
-	}
+  
 	
-  const handleOpen = () => {
-		setOpen( true );
-		bodyScrollingToggle()
+	const handleOpen = ( direction) => {
+		if ( direction === 'covid19' ) {
+			setOpenCovid( true )
+			bodyScrollingToggle();
+		}
+		else if ( direction === 'quiz' ) {
+			setOpenQuiz( true )
+			bodyScrollingToggle();
+		}
+		else if ( direction === 'onlineMagazine' ) {
+			setOpenOnlineMagazine( true )
+			bodyScrollingToggle();
+		}
+		else if ( direction === 'budgetary' ) {
+			setOpenBudgetary( true )
+			bodyScrollingToggle();
+		}
+		else {
+			setOpenAmazon( true );
+			bodyScrollingToggle();
+		}
+		 bodyScrollingToggle();
 	}
 
-		const [openDetails, setOpenDetails] = useState(false);
 
-		const handleOpenDetails = () => {
-			setOpenDetails(!openDetails);
-		};
-
-	
 
 	useEffect( () => {
 		const filterContainer = document.querySelector( '.portfolio-filter' ),
-			portfolioItemsContainer = document.querySelector( '.portfolio-items' ),
 			portfolioItems = document.querySelectorAll( '.portfolio-item' );
-
-		let itemIndex, slideIndex, screenshots;
-		
-
 
 		filterContainer.addEventListener( 'click', ( e ) => {
 			if (
@@ -142,132 +127,29 @@ export const Portfolio = () => {
 						</PortfolioSectionFilter>
 					</Wrapper>
 
-					{/* PORTFOLIO ITEMS START */}
 					<Wrapper>
 						<PortfolioSectionItems className='portfolio-items'>
-							{/* PORTFOLIO ITEM START  1*/}
-							<PortfolioSectionItem
-								className='portfolio-item'
-								data-category='web-application'
-							>
-								<PortfolioSectionItemInner className='portfolio-item-inner outer-shadow'>
-									<PortfolioSectionItemImg className='portfolio-item-img'>
-										<img
-											src={images.quiz1}
-											alt='Quiz-pic'
-										/>
-										<span onClick={handleOpenQuiz} className='view-project'>
-											View project
-										</span>
-									</PortfolioSectionItemImg>
-									<PortfolioSectionItemTitle className='portfolio-item-title'>
-										Quiz Game Application
-									</PortfolioSectionItemTitle>
-
-									{/* PORTFOLIO ITEM DETAILS START */}
-									{/* <Quiz /> */}
-									{/* PORTFOLIO ITEM DETAILS END */}
-								</PortfolioSectionItemInner>
-							</PortfolioSectionItem>
-							{/* PORTFOLIO ITEM END */}
-
-							{/* PORTFOLIO ITEM START 2*/}
-							<PortfolioSectionItem
-								className='portfolio-item'
-								data-category='web-design'
-							>
-								<PortfolioSectionItemInner className='portfolio-item-inner outer-shadow'>
-									<PortfolioSectionItemImg className='portfolio-item-img'>
-										<img
-											src={images.covid1}
-											alt='Quiz-pic'
-										/>
-										<span onClick={handleOpenCovid} className='view-project'>
-											View project
-										</span>
-									</PortfolioSectionItemImg>
-									<PortfolioSectionItemTitle className='portfolio-item-title'>
-										Covid-19 Tracker
-									</PortfolioSectionItemTitle>
-									{/* PORTFOLIO ITEM DETAILS START */}
-									{/* {open && <Quiz />} */}
-
-									{/* PORTFOLIO ITEM DETAILS END */}
-								</PortfolioSectionItemInner>
-							</PortfolioSectionItem>
-							{/* PORTFOLIO ITEM END */}
-							{/* PORTFOLIO ITEM START 3 */}
-							<PortfolioSectionItem
-								className='portfolio-item'
-								data-category='web-application'
-							>
-								<PortfolioSectionItemInner className='portfolio-item-inner outer-shadow'>
-									<PortfolioSectionItemImg className='portfolio-item-img'>
-										<img
-											src={images.budget1}
-											alt='Quiz-pic'
-										/>
-										<span
-											onClick={handleOpenBudgetary}
-											className='view-project'
-										>
-											View project
-										</span>
-									</PortfolioSectionItemImg>
-									<PortfolioSectionItemTitle className='portfolio-item-title'>
-										Budgetary{' '}
-									</PortfolioSectionItemTitle>
-								</PortfolioSectionItemInner>
-							</PortfolioSectionItem>
-							{/* PORTFOLIO ITEM END */}
-							{/* PORTFOLIO ITEM START 4 */}
-							<PortfolioSectionItem
-								className='portfolio-item'
-								data-category='web-application'
-							>
-								<PortfolioSectionItemInner className='portfolio-item-inner outer-shadow'>
-									<PortfolioSectionItemImg className='portfolio-item-img'>
-										<img
-											src={images.onlineMagazine1}
-											alt='Quiz-pic'
-										/>
-										<span
-											onClick={handleOpenOnlineMagazine}
-											className='view-project'
-										>
-											View project
-										</span>
-									</PortfolioSectionItemImg>
-									<PortfolioSectionItemTitle className='portfolio-item-title'>
-										Online Magazine
-									</PortfolioSectionItemTitle>
-								</PortfolioSectionItemInner>
-							</PortfolioSectionItem>
-							{/* PORTFOLIO ITEM END */}
-							{/* PORTFOLIO ITEM START 4*/}
-							<PortfolioSectionItem
-								className='portfolio-item'
-								data-category='e-commerce'
-							>
-								<PortfolioSectionItemInner className='portfolio-item-inner outer-shadow'>
-									<PortfolioSectionItemImg className='portfolio-item-img'>
-										<img
-											src={images.amazon1}
-											alt='Quiz-pic'
-										/>
-										<span onClick={handleOpenAmazon} className='view-project'>
-											View project
-										</span>
-									</PortfolioSectionItemImg>
-									<PortfolioSectionItemTitle className='portfolio-item-title'>
-										Amazon Clone Demo App
-									</PortfolioSectionItemTitle>
-								</PortfolioSectionItemInner>
-							</PortfolioSectionItem>
-							{/* PORTFOLIO ITEM END */}
+							{portfolioList.map(item => (
+								<PortfolioSectionItem
+									className='portfolio-item'
+									data-category={ item.dataCategory }
+									key={item.title}
+								>
+									<PortfolioSectionItemInner className='portfolio-item-inner outer-shadow'>
+										<PortfolioSectionItemImg className='portfolio-item-img'>
+											<img src={item.img} alt='Quiz-pic' />
+											<span onClick={(e)=>handleOpen(item.direction)} className='view-project'>
+												View project
+											</span>
+										</PortfolioSectionItemImg>
+										<PortfolioSectionItemTitle className='portfolio-item-title'>
+											{item.title}
+										</PortfolioSectionItemTitle>
+									</PortfolioSectionItemInner>
+								</PortfolioSectionItem>
+							))}
 						</PortfolioSectionItems>
 					</Wrapper>
-					{/* PORTFOLIO ITEMS END */}
 				</Container>
 			</PortfolioSection>
 

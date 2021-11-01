@@ -1,3 +1,5 @@
+import { images } from "./images"
+
 export const NavLists = [
   {
     name: 'home',
@@ -24,3 +26,36 @@ export const NavLists = [
     path: '/contact'
   },
 ]
+
+export const portfolioList = [
+	{
+		img: images.quiz1,
+		title: 'Quiz Game App',
+		dataCategory: 'web-application',
+		direction: 'quiz',
+	},
+	{
+		img: images.covid1,
+		title: 'Covid-19 Tracker',
+		dataCategory: 'e-commerce',
+		direction: 'covid19',
+	},
+	{
+		img: images.budget1,
+		title: 'Budgetary',
+		dataCategory: 'web-application',
+		direction: 'budgetary',
+	},
+	{
+		img: images.onlineMagazine1,
+		title: 'Online Magazine',
+		dataCategory: 'web-design',
+		direction: 'onlineMagazine',
+	},
+	{
+		img: images.amazon1,
+		title: 'Amazon Clone Demo App',
+		dataCategory: 'e-commerce',
+		direction: 'amazon',
+	},
+];
