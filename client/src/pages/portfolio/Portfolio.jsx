@@ -4,7 +4,7 @@ import { Wrapper, Container, SectionTitle } from '../../styles/globalStyles';
 import QuizImg from '../../images/quiz/quiz-1.png'
 import { Quiz } from '../../components/projects/quiz/Quiz';
 
-import { images, quizImages, covidImages } from '../../components/images';
+import { images } from '../../components/images';
 import { Covid } from '../../components/projects/covid-19/Covid';
 import { Budgetary } from '../../components/projects/budgetary/Budgetary';
 import { Amazon } from '../../components/projects/amazon/Amazon';
@@ -147,7 +147,7 @@ export const Portfolio = () => {
 								<PortfolioSectionItemInner className='portfolio-item-inner outer-shadow'>
 									<PortfolioSectionItemImg className='portfolio-item-img'>
 										<img
-											src={quizImages.quiz1}
+											src={images.quiz1}
 											alt='Quiz-pic'
 										/>
 										<span onClick={handleOpenQuiz} className='view-project'>
@@ -173,7 +173,7 @@ export const Portfolio = () => {
 								<PortfolioSectionItemInner className='portfolio-item-inner outer-shadow'>
 									<PortfolioSectionItemImg className='portfolio-item-img'>
 										<img
-											src={covidImages.covid1}
+											src={images.covid1}
 											alt='Quiz-pic'
 										/>
 										<span onClick={handleOpenCovid} className='view-project'>

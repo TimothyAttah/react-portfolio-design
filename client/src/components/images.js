@@ -3,6 +3,9 @@ import quiz2 from '../images/quiz/quiz-2.png'
 import quiz3 from '../images/quiz/quiz-3.png'
 import quiz4 from '../images/quiz/quiz-4.png'
 
+import onlineMagazine1 from '../images/online-magazine/online-magazine-1.png'
+import onlineMagazine2 from '../images/online-magazine/online-magazine-4.png'
+
 
 import covid1 from '../images/covid-19/covid-1.png'
 import covid2 from '../images/covid-19/covid-2.png'
@@ -24,20 +27,8 @@ export const images = {
   quiz1,
   covid1,
   budget1,
-  amazon1
-}
-
-export const quizImages = {
-  quiz1,
-  quiz2,
-  quiz3,
-  quiz4
-}
-
-export const covidImages = {
-  covid1,
-  covid2,
-  covid3
+  amazon1,
+  onlineMagazine1,
 }
 
 
