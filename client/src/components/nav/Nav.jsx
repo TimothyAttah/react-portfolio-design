@@ -20,53 +20,67 @@ export const NavMenu = styled.nav`
 `;
 
 export const CloseNavMenu = styled.div`
-  width: 40px;
-  height: 40px;
-  display: block;
-  font-size: 3rem;
-  line-height: 35px;
-  border-radius: 50%;
-  text-align: center;
-  position: absolute;
-  right: 15px !important;
-  top: 15px;
-  cursor: pointer;
-  color: var(--text-black-600);
-  transition: all 0.3s ease;
-  ::after{
-    border-radius: 50%;
-  }
+	width: 40px;
+	height: 40px;
+	display: block;
+	font-size: 3rem;
+	line-height: 35px;
+	border-radius: 50%;
+	text-align: center;
+  margin-top: 20px;
+  margin-right: 20px;
+	/* position: absolute;
+	right: 15px !important;
+	top: 15px; */
+	cursor: pointer;
+	color: var(--text-black-600);
+	transition: all 0.3s ease;
+	/* border: 2px solid red; */
+
+	::after {
+		border-radius: 50%;
+	}
+`;
+
+export const NavMenuWrapper = styled.div`
+	/* border: 2px solid blue; */
+  display: flex;
+  justify-content: space-between;
 `;
 
 export const NavMenuInner = styled.div`
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  ul{
-    padding: 15px;
-    li{
-      display: block;
-      margin-bottom: 20px;
-      text-align: center;
-      :last-child{
-        margin-bottom: 0;
-      }
-      a{
-        display: inline-block;
-        font-size: 1.8rem;
-        font-weight: 600;
-        color: var(--text-black-700);
-        padding: 5px 30px;
-        text-transform: capitalize;
-        border-radius: 30px;
-        transition: all 0.3s ease;
-        ::after{
-          border-radius: 30px;
-        }
-      }
-    }
-  }
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/* border: 2px solid red; */
+	width: 100%;
+
+	ul {
+		padding: 15px;
+		li {
+			display: block;
+			margin-bottom: 20px;
+			text-align: center;
+			transition: all 0.3s ease;
+			:last-child {
+				margin-bottom: 0;
+			}
+			a {
+				display: inline-block;
+				font-size: 1.8rem;
+				font-weight: 600;
+				color: var(--text-black-700);
+				padding: 5px 30px;
+				text-transform: capitalize;
+				border-radius: 30px;
+				transition: all 0.3s ease;
+				::after {
+					border-radius: 30px;
+				}
+			}
+		}
+	}
 `;
 
 export const activeLink = {
@@ -85,30 +99,37 @@ export const CopyrightText = styled.p`
 
 export const Nav = ( { open, setOpen } ) => {
   const handleClick = () => {
-    setOpen(!open)
+    setTimeout( () => {
+      setOpen( !open )
+    },500)
   }
   return (
 		<NavMenu>
-			<CloseNavMenu onClick={handleClick} className='close-nav-menu outer-shadow hover-in-shadow'>
-				<Close />
-			</CloseNavMenu>
-			<NavMenuInner className='nav-menu-inner'>
-				<ul>
-					{NavLists.map(item => (
-						<li key={item.name}>
-							<NavLink
-								activeStyle={activeLink}
-								to={item.path}
-								// target='_blank'
-								className='outer-shadow hover-in-shadow'
-							>
-								{item.name}
-							</NavLink>
-						</li>
-					))}
-				</ul>
-      </NavMenuInner>
-      <CopyrightText>&copy; 2021 Timothy Attah</CopyrightText>
+			<NavMenuWrapper>
+				<NavMenuInner className='nav-menu-inner'>
+					<ul>
+						{NavLists.map(item => (
+							<li key={item.name}>
+								<NavLink
+									activeStyle={activeLink}
+									to={item.path}
+									// target='_blank'
+									className='outer-shadow hover-in-shadow'
+								>
+									{item.name}
+								</NavLink>
+							</li>
+						))}
+					</ul>
+				</NavMenuInner>
+				<CloseNavMenu
+					onClick={handleClick}
+					className='close-nav-menu outer-shadow hover-in-shadow'
+				>
+					<Close />
+				</CloseNavMenu>
+			</NavMenuWrapper>
+			<CopyrightText>&copy; 2021 Timothy Attah</CopyrightText>
 		</NavMenu>
 	);
 }
