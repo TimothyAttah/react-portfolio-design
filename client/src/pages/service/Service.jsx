@@ -79,7 +79,7 @@ export const ServiceItemInner = styled.section`
 		font-size: 1.2rem;
 		color: var(--text-black-600);
 		margin: 0;
-		line-height: 28px;
+		line-height: 32px;
 	}
 `;
 // export const ServiceSection = styled.section`

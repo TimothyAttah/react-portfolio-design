@@ -39,11 +39,11 @@ body.dark{
 
 /*************** GLOBAL GENERAL STYLES ****************** */
 html{
-  font-size: 16px;
+  font-size: 18px;
 }
 @media (max-width:600px){
   html{
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 body {

@@ -34,7 +34,7 @@ export const AboutInfo = styled.div`
 	padding: 0 15px;
 	p {
 		font-size: 1.2rem;
-		line-height: 30px;
+		line-height: 35px;
 		margin-bottom: 15px;
 		color: var(--text-black-600);
 	}

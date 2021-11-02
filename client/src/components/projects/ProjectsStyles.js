@@ -254,8 +254,17 @@ export const PortfolioPopupProjectsDetails = styled.div`
 			max-width: 100%;
 			width: 100%;
 		}
-		.info{
+		.info {
 			margin-top: 30px;
+		}
+	}
+	@media (max-width: 290px) {
+		.info {
+			span {
+				a {
+					font-size: 0.9rem;
+				}
+			}
 		}
 	}
 `;

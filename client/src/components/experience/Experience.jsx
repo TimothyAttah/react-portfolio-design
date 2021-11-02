@@ -50,15 +50,15 @@ export const TimeLineItem = styled.div`
 	}
 	@media (max-width: 540px) {
 		margin-bottom: 30px;
-		:last-child{
+		:last-child {
 			margin-bottom: 0;
 		}
 		:nth-child(odd) {
 			padding-right: calc(10% + 50px);
 		}
-	}
-	:nth-child(even) {
-		padding-left: calc(10% + 50px);
+		:nth-child(even) {
+			padding-left: calc(10% + 50px);
+		}
 	}
 `;
 export const TimeLineItemInner = styled.div`

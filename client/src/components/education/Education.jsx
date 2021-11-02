@@ -56,9 +56,9 @@ export const TimeLineItem = styled.div`
 		:nth-child(odd) {
 			padding-right: calc(10% + 50px);
 		}
-	}
-	:nth-child(even) {
-		padding-left: calc(10% + 50px);
+		:nth-child(even) {
+			padding-left: calc(10% + 50px);
+		}
 	}
 `;
 export const TimeLineItemInner = styled.div`
