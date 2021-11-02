@@ -169,6 +169,17 @@ button{
   left: 50%;
   top: -120px;
   animation: leftBounce 3s ease-in-out infinite;
+  /* border: 3px solid red; */
+  @media (max-width:375px){
+    left: 40%;
+    width: 150px;
+    height: 160px;
+     border: 15px solid var(--skin-color);
+  }
+  @media (max-width:290px){
+    left: 35%;
+    width: 130px;
+  }
 }
 .effect-4{
   border-top: 30px solid transparent;
@@ -176,6 +187,7 @@ button{
   left: 30%;
   top: 20%;
   animation: spin 15s linear infinite;
+  
 }
 .effect-4:before{
   content: '';
@@ -185,6 +197,7 @@ button{
   opacity: 0.5;
   left: -35px;
   top: -25px;
+  
 }
 .effect-5{
   height: 50px;
