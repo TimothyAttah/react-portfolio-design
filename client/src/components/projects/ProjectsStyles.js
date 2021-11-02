@@ -105,6 +105,9 @@ export const PortfolioPopupMain = styled.div`
 	.pp-next {
 		right: 15px;
 	}
+	@media (max-width:540px){
+		min-height: 60vh;
+	}
 `;
 export const PortfolioPopupMainInner = styled.div`
 	padding: 70px 0 50px;
@@ -242,6 +245,17 @@ export const PortfolioPopupProjectsDetails = styled.div`
 					margin-left: 10px;
 				}
 			}
+		}
+	}
+	@media (max-width: 540px) {
+		.info,
+		.description {
+			flex: 0 0 100%;
+			max-width: 100%;
+			width: 100%;
+		}
+		.info{
+			margin-top: 30px;
 		}
 	}
 `;
