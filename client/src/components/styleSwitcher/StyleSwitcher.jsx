@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Settings, StarHalfTwoTone } from '@material-ui/icons';
+import { Cloud, NavigateNext, NightsStay, Settings, SettingsSystemDaydream, StarHalfTwoTone, ViewDay } from '@material-ui/icons';
 import styled, { css } from 'styled-components';
 
 export const StyleSwitcherContainer = styled.div`
@@ -105,22 +105,79 @@ export const Colors = styled.div`
 
 
 export const StyleSwitcher = () => {
-  const [ open, setOpen ] = useState( true );
-  const setActiveStyle = ( color ) => {
-    
-  }
+  const [ open, setOpen ] = useState( false );
+  const [ night, setNight ] = useState( true );
+	const alternateStyle = document.querySelectorAll( '.alternate-style' );
+	const setActiveStyle = ( color ) => {
+		localStorage.setItem( 'color', color )
+		changeColorTheme();
+	}
+	const changeColorTheme = () => {
+		alternateStyle.forEach(style => {
+			if (localStorage.getItem('color') === style.getAttribute('title')) {
+				style.removeAttribute('disabled');
+			} else {
+				style.setAttribute('disabled', 'true');
+			}
+			setOpen(false);
+		});
+	};
+
+	 const handleNightDay = () => {
+			setNight(!night);
+			document.body.classList.toggle('dark');
+			if (document.body.classList.contains('dark')) {
+				localStorage.setItem('theme', 'dark');
+			} else {
+				localStorage.setItem('theme', 'light');
+			}
+		};
+
+		const changeColor = () => {
+			if (localStorage.getItem('theme') !== null) {
+				if (localStorage.getItem('theme') === 'light') {
+					document.body.classList.remove('dark');
+				} else {
+					document.body.classList.add('dark');
+				}
+			}
+		};
+	
+	
+	useEffect( () => {
+		if ( localStorage.getItem( 'color' ) !== null ) {
+			changeColorTheme();
+		}
+		changeColor()
+	}, [] );
+
   const handleOpen = () => {
     setTimeout( () => {
       setOpen(!open)
     },300)
   }
 
-  useEffect( () => {
+ 
 
+  useEffect( () => {
     window.addEventListener( 'scroll', () => {
       setOpen(false)
-    })
-  },[])
+    } )
+  }, [] )
+
+  useEffect( () => {
+    // window.addEventListener( 'load', () => {
+    //   if ( document.body.classList.contains( 'dark' ) ) {
+    //      setNight(false)
+    //   }
+    //   else {
+    //     setNight(true)
+    //   }
+		// } )
+		// handleNightDay()
+  })
+  
+
   return (
     <StyleSwitcherContainer className="style-switcher">
 			<StyleSwitcherWrapper>
@@ -159,10 +216,12 @@ export const StyleSwitcher = () => {
 						<Settings />
 					</StyleToggler>
 					<StyleToggler
-						primary
+            primary
+            onClick={handleNightDay}
 						className='day-night s-icon outer-shadow hover-in-shadow'
-					>
-						<StarHalfTwoTone />
+          >
+            {night ? <NightsStay /> : <Cloud />}
+						
 					</StyleToggler>
 				</IconWrapper>
 			</StyleSwitcherWrapper>
