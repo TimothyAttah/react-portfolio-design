@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Cloud, NavigateNext, NightsStay, Settings, SettingsSystemDaydream, StarHalfTwoTone, ViewDay } from '@material-ui/icons';
+import { Cloud, NightsStay, Settings } from '@material-ui/icons';
 import styled, { css } from 'styled-components';
 
 export const StyleSwitcherContainer = styled.div`
@@ -7,7 +7,7 @@ export const StyleSwitcherContainer = styled.div`
 	right: 0;
 	top: 77px;
 	width: 280px;
-	z-index: 101;
+	z-index: 1999;
 	transition: all 0.3s ease;
 	h4 {
 		margin: 0 0 10px;
@@ -21,16 +21,16 @@ export const StyleSwitcherContainer = styled.div`
 export const StyleSwitcherWrapper = styled.div`
 	display: flex;
 	justify-content: space-between;
-  position: relative;
+	position: relative;
 `;
 
 export const IconWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-  align-items: center;
-  position: absolute;
-  right: 0;
+	align-items: center;
+	position: absolute;
+	right: 0;
 `;
 
 export const ColorsWrapper = styled.div`
@@ -78,7 +78,7 @@ export const Colors = styled.div`
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: space-between;
- 
+
 	span {
 		display: inline-block;
 		height: 30px;
