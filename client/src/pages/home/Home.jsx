@@ -8,7 +8,6 @@ import { Effects } from '../../components/Effects';
 
 
 export const HomeSection = styled.section`
-	border: 2px solid green;
 	.full-screen {
 		padding: 50px 0;
 		min-height: 100vh;
@@ -50,11 +49,6 @@ export const HomeText = styled.div`
 	}
 	a {
 		margin-top: 30px;
-	}
-	@media (max-width: 768px) {
-		h2 {
-			font-size: 2.6rem;
-		}
 	}
 	@media (max-width: 540px) {
 		position: absolute;
