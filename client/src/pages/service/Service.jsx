@@ -98,7 +98,7 @@ export const Service = () => {
 				<Wrapper>
 					<ServiceItem className='service-item'>
 						<ServiceItemInner className='service-item-inner outer-shadow'>
-							<div class='icon inner-shadow'>
+							<div className='icon inner-shadow'>
 								<PhoneAndroidOutlined />
 							</div>
 							<h3>Responsive design</h3>
@@ -114,7 +114,7 @@ export const Service = () => {
 					</ServiceItem>
 					<ServiceItem className='service-item'>
 						<ServiceItemInner className='service-item-inner outer-shadow'>
-							<div class='icon inner-shadow'>
+							<div className='icon inner-shadow'>
 								<LaptopChromebook />
 							</div>
 							<h3>Web design</h3>
@@ -128,7 +128,7 @@ export const Service = () => {
 					</ServiceItem>
 					<ServiceItem className='service-item'>
 						<ServiceItemInner className='service-item-inner outer-shadow'>
-							<div class='icon inner-shadow'>
+							<div className='icon inner-shadow'>
 								<Code />
 							</div>
 							<h3>clean code</h3>
@@ -145,7 +145,7 @@ export const Service = () => {
 					</ServiceItem>
 					<ServiceItem className='service-item'>
 						<ServiceItemInner className='service-item-inner outer-shadow'>
-							<div class='icon inner-shadow'>
+							<div className='icon inner-shadow'>
 								<People />
 							</div>
 							<h3>Great support</h3>
