@@ -9,10 +9,15 @@ export const ContactSection = styled.div`
 `;
 
 export const ContactItem = styled.div`
-  flex: 0 0 33.33%;
-  max-width: 33.33%;
-  padding: 15px;
-  display: flex;
+	flex: 0 0 33.33%;
+	max-width: 33.33%;
+	padding: 15px;
+	display: flex;
+	@media (max-width: 540px) {
+		flex: 0 0 100%;
+		max-width: 100%;
+		width: 100%;
+	}
 `;
 export const ContactItemInner = styled.div`
   padding: 30px 15px;
