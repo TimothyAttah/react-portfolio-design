@@ -19,6 +19,11 @@ export const TimeLine = styled.div`
 		left: 50%;
 		top: 0;
 	}
+	@media (max-width: 540px) {
+		::before {
+			display: none;
+		}
+	}
 `;
 export const TimeLineItem = styled.div`
 	/* background-color: red; */
@@ -43,6 +48,18 @@ export const TimeLineItem = styled.div`
 		> ::before {
 			left: -30px;
 		}
+	}
+	@media (max-width: 540px) {
+		margin-bottom: 30px;
+		:last-child {
+			margin-bottom: 0;
+		}
+		:nth-child(odd) {
+			padding-right: calc(10% + 50px);
+		}
+	}
+	:nth-child(even) {
+		padding-left: calc(10% + 50px);
 	}
 `;
 export const TimeLineItemInner = styled.div`
