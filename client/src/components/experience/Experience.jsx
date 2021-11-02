@@ -19,9 +19,13 @@ export const TimeLine = styled.div`
     left: 50%;
     top: 0;
   }
+	@media (max-width:540px){
+		::before{
+			display: none;
+		}
+	}
 `;
 export const TimeLineItem = styled.div`
-	/* background-color: red; */
 	flex: 0 0 100%;
 	max-width: 100%;
 	padding: 0 15px;
@@ -44,11 +48,24 @@ export const TimeLineItem = styled.div`
 			left: -30px;
 		}
 	}
+	@media (max-width: 540px) {
+		margin-bottom: 30px;
+		:last-child{
+			margin-bottom: 0;
+		}
+		:nth-child(odd) {
+			padding-right: calc(10% + 50px);
+		}
+	}
+	:nth-child(even) {
+		padding-left: calc(10% + 50px);
+	}
 `;
 export const TimeLineItemInner = styled.div`
 	padding: 30px;
 	border-radius: 5px;
 	position: relative;
+
 	::before {
 		content: '';
 		position: absolute;
