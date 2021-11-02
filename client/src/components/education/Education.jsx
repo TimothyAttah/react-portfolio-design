@@ -1,11 +1,12 @@
 import React from 'react';
 import { Wrapper } from '../../styles/globalStyles';
-import {  School } from '@material-ui/icons';
+import { School } from '@material-ui/icons';
 import {
-	EducationContainer, TimeLine,
-	TimeLineItem, TimeLineItemInner
+	EducationContainer,
+	TimeLine,
+	TimeLineItem,
+	TimeLineItemInner,
 } from './EducationStyles';
-
 
 export const Education = () => {
 	return (
