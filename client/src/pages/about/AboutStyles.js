@@ -3,9 +3,6 @@ import styled from 'styled-components';
 export const AboutSection = styled.section`
 	padding: 80px 0 0;
 	min-height: 100vh;
-	@media (max-width:540px){
-		/* display: flex; */
-	}
 `;
 
 export const AboutImg = styled.div`

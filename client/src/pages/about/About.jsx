@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { GitHub, Facebook, LinkedIn } from '@material-ui/icons';
+import { Link } from 'react-router-dom';
+
+import PDF from '../../timothyattah.pdf';
 import { Container, Wrapper, SectionTitle } from '../../styles/globalStyles';
 import ProfilePic from '../../images/photo-2.png';
-import PDF from '../../timothyattah.pdf';
 import { Button } from '../../components/buttons';
-import { Link } from 'react-router-dom';
 import { Skills } from '../../components/skills/Skills';
 import { Experience } from '../../components/experience/Experience';
 import { Education } from '../../components/education/Education';
-
 import {
 	AboutSocialLinks,
 	AboutImg,
@@ -44,12 +44,12 @@ export const About = () => {
 		<AboutSection>
 			<Container>
 				<Wrapper>
-					<SectionTitle className='section-title'>
+					<SectionTitle>
 						<h2 data-heading='main info'>About Me</h2>
 					</SectionTitle>
 				</Wrapper>
 				<Wrapper>
-					<AboutImg className='about-img'>
+					<AboutImg>
 						<div className='img-box inner-shadow'>
 							<img
 								src={ProfilePic}
@@ -81,7 +81,7 @@ export const About = () => {
 							</Link>
 						</AboutSocialLinks>
 					</AboutImg>
-					<AboutInfo className='about-info'>
+					<AboutInfo>
 						<p>
 							<span>Hi! my name is Timothy Attah. I am a Web Developer, </span>
 							and i specialize in efficient React App and HTML and CSS, that
@@ -100,7 +100,6 @@ export const About = () => {
 							and listen to music.
 						</p>
 						<Button props={PDF} target='_blank'>
-							{' '}
 							Download CV
 						</Button>
 						<Button props='/contact'> Hire Me</Button>
