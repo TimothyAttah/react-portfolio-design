@@ -1,31 +1,31 @@
-import { images } from "./images"
+import { images } from './images';
 
 export const NavLists = [
-  {
-    name: 'home',
-    path: '/home'
-  },
-  {
-    name: 'about',
-    path: '/about'
-  },
-  {
-    name: 'services',
-    path: '/services'
-  },
-  {
-    name: 'portfolio',
-    path: '/portfolio'
-  },
-  {
-    name: 'testimonial',
-    path: '/testimonial'
-  },
-  {
-    name: 'contact',
-    path: '/contact'
-  },
-]
+	{
+		name: 'home',
+		path: '/home',
+	},
+	{
+		name: 'about',
+		path: '/about',
+	},
+	{
+		name: 'services',
+		path: '/services',
+	},
+	{
+		name: 'portfolio',
+		path: '/portfolio',
+	},
+	{
+		name: 'testimonial',
+		path: '/testimonial',
+	},
+	{
+		name: 'contact',
+		path: '/contact',
+	},
+];
 
 export const portfolioList = [
 	{
@@ -104,4 +104,4 @@ export const skillItem = [
 	{
 		name: 'Postgres/SQL',
 	},
-]
+];
