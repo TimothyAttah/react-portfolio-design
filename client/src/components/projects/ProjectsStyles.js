@@ -199,6 +199,7 @@ export const PortfolioPopupTitle = styled.div`
 		span {
 			font-weight: 400;
 			text-transform: capitalize;
+			margin-left: 10px;
 		}
 	}
 `;

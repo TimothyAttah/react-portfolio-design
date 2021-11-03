@@ -15,7 +15,7 @@ export const Nav = ({ open, setOpen }) => {
 	const handleClick = () => {
 		setTimeout(() => {
 			setOpen(!open);
-		}, 500);
+		}, 300);
 	};
 	return (
 		<NavMenu>
