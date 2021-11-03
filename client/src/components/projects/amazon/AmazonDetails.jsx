@@ -11,7 +11,7 @@ import {
 
 export const AmazonDetails = () => {
 	return (
-		<div>
+		<>
 			<PortfolioPopupDetails className='pp-details'>
 				<PortfolioPopupDetailsInner>
 					<PortfolioPopupTitle>
@@ -66,6 +66,6 @@ export const AmazonDetails = () => {
 					</PortfolioPopupProjectsDetails>
 				</PortfolioPopupDetailsInner>
 			</PortfolioPopupDetails>
-		</div>
+		</>
 	);
 };
