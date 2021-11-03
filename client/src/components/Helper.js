@@ -78,3 +78,30 @@ export const portfolioListItem = [
 		dataTarget: 'e-commerce',
 	},
 ];
+
+export const skillItem = [
+	{
+		name: 'HTML',
+	},
+	{
+		name: 'CSS',
+	},
+	{
+		name: 'Javascript',
+	},
+	{
+		name: 'React/Redux',
+	},
+	{
+		name: 'Nodejs/Express',
+	},
+	{
+		name: 'MongoDB',
+	},
+	{
+		name: 'Git/GitHub',
+	},
+	{
+		name: 'Postgres/SQL',
+	},
+]
