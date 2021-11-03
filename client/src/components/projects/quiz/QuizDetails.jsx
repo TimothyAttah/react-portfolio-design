@@ -11,17 +11,17 @@ import {
 
 export const QuizDetails = () => {
 	return (
-		<div>
-			<PortfolioPopupDetails className='pp-details'>
-				<PortfolioPopupDetailsInner className='pp-details-inner'>
+		<>
+			<PortfolioPopupDetails>
+				<PortfolioPopupDetailsInner>
 					<PortfolioPopupTitle>
 						<h2>Quiz Application</h2>
 						<p>
 							Category -
-							<span className='pp-project-category'>Web Application</span>
+							<span>Web Application</span>
 						</p>
 					</PortfolioPopupTitle>
-					<PortfolioPopupProjectsDetails className='pp-project-details'>
+					<PortfolioPopupProjectsDetails>
 						<Wrapper>
 							<div className='description'>
 								<h3>Project Brief:</h3>
@@ -38,7 +38,7 @@ export const QuizDetails = () => {
 										Date - <span>2021</span>
 									</li>
 									<li>
-										Source Code -{' '}
+										Source Code -
 										<span>
 											<Link
 												to='www.github.com/timothyattah/online-magazine'
@@ -53,7 +53,7 @@ export const QuizDetails = () => {
 										Tools - <span>React, Styled-components</span>
 									</li>
 									<li>
-										Live Demo -{' '}
+										Live Demo -
 										<span>
 											<Link
 												to='www.Covid-19-Tracker.netlify.com'
@@ -70,6 +70,6 @@ export const QuizDetails = () => {
 					</PortfolioPopupProjectsDetails>
 				</PortfolioPopupDetailsInner>
 			</PortfolioPopupDetails>
-		</div>
+		</>
 	);
 };

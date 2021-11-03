@@ -7,28 +7,25 @@ import {
 	Close,
 	Remove,
 } from '@material-ui/icons';
-import { quizItems } from '../../images';
 
+import { quizItems } from '../../images';
+import { QuizDetails } from './QuizDetails';
 import {
 	PortfolioPopup,
 	PortfolioPopupMain,
 	PortfolioPopupMainInner,
 	Loader,
 } from '../ProjectsStyles';
-import { QuizDetails } from './QuizDetails';
 
 export const Quiz = ({ close }) => {
 	const [openDetails, setOpenDetails] = useState(false);
 	let [slideIndex, setSlideIndex] = useState(0);
+	const [loader, setLoader] = useState(false);
+	const imgSrc = quizItems[ slideIndex ];
+	
 	const handleOpenDetails = () => {
 		setOpenDetails(!openDetails);
 	};
-
-	const [loader, setLoader] = useState(false);
-
-	const imgSrc = quizItems[slideIndex];
-
-	console.log(imgSrc?.img);
 
 	const handleNextBtn = () => {
 		if (slideIndex > quizItems.length - 1) {
@@ -43,7 +40,6 @@ export const Quiz = ({ close }) => {
 
 	const handlePrevBtn = () => {
 		if (slideIndex === 0) {
-			// setSlideIndex(0);
 			setSlideIndex((slideIndex = quizItems.length - 1));
 		} else {
 			setSlideIndex(slideIndex--);
@@ -54,15 +50,15 @@ export const Quiz = ({ close }) => {
 
 	useEffect(() => {
 		handleNextBtn();
-	}, [handleNextBtn]);
+	}, [ handleNextBtn ] );
+	
 	return (
 		<>
-			<PortfolioPopup className='pp portfolio-popup'>
+			<PortfolioPopup>
 				{openDetails && <QuizDetails />}
 				<div className='separator'></div>
-
-				<PortfolioPopupMain className='pp-main'>
-					<PortfolioPopupMainInner className='pp-main-inner'>
+				<PortfolioPopupMain>
+					<PortfolioPopupMainInner>
 						<div
 							onClick={handleOpenDetails}
 							className='pp-project-details-btn outer-shadow  hover-in-shadow'
@@ -76,12 +72,10 @@ export const Quiz = ({ close }) => {
 						>
 							<Close />
 						</div>
-
 						<img src={imgSrc?.img} alt='' className='pp-img outer-shadow ' />
-
-						<div className='pp-counter'>{`${slideIndex + 1} of ${
-							quizItems.length
-						}`}</div>
+						<div className='pp-counter'>
+							{ `${ slideIndex + 1 } of ${	quizItems.length }` }
+						</div>
 					</PortfolioPopupMainInner>
 					{loader && (
 						<Loader className='.pp-loader'>
