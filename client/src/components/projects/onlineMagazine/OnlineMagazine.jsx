@@ -72,12 +72,10 @@ export const OnlineMagazine = ({ close }) => {
 						>
 							<Close />
 						</div>
-
 						<img src={imgSrc?.img} alt='' className='pp-img outer-shadow ' />
-
-						<div className='pp-counter'>{`${slideIndex + 1} of ${
-							OnlineMagazineItems.length
-						}`}</div>
+						<div className='pp-counter'>
+							{ `${ slideIndex + 1 } of ${	OnlineMagazineItems.length}` }
+						</div>
 					</PortfolioPopupMainInner>
 					{loader && (
 						<Loader className='.pp-loader'>
