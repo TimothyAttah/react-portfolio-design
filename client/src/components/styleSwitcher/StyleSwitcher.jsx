@@ -1,5 +1,6 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react'
-import { Cloud, NightsStay, Settings } from '@material-ui/icons';
+import { Brightness4, Brightness7, Settings } from '@material-ui/icons';
 
 import {
 	StyleSwitcherContainer,
@@ -110,7 +111,7 @@ export const StyleSwitcher = () => {
             onClick={handleNightDay}
 						className='outer-shadow hover-in-shadow'
           >
-            {night ? <NightsStay /> : <Cloud />}
+            {night ? <Brightness4 /> : <Brightness7 />}
 					</StyleToggler>
 				</IconWrapper>
 			</StyleSwitcherWrapper>
