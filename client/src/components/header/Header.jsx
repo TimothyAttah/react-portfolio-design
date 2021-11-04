@@ -47,7 +47,7 @@ export const Header = ({ open, setOpen }) => {
 	const handleClick = () => {
 		setTimeout(() => {
 			setOpen(!open);
-		}, 500);
+		}, 300);
 	};
 	return (
 		<HeaderContainer>
