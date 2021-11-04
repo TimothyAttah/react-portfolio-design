@@ -14,7 +14,7 @@ export const SkillsContainer = styled.div`
 
 export const SkillItem = styled.div`
 	width: 220px;
-	height: 100px;
+	height: 90px;
 	display: flex;
 	align-items: center;
 	padding: 15px 0;
@@ -38,7 +38,6 @@ export const SkillItem = styled.div`
 	}
 	p {
 		margin-left: 60px;
-		text-shadow: -3px -3px 3px #fff7, 3px 3px 3px #0003;
 	}
 	@media (max-width: 540px) {
 		width: 240px;
