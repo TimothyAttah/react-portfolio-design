@@ -28,6 +28,7 @@ export const Nav = ({ open, setOpen }) => {
 									activeStyle={activeLink}
 									to={item.path}
 									className='outer-shadow hover-in-shadow'
+									onClick={handleClick}
 								>
 									{item.name}
 								</NavLink>
