@@ -33,7 +33,7 @@ export const portfolioList = [
 	{
 		img: images.covid1,
 		title: 'Covid-19 Tracker',
-		dataCategory: 'e-commerce',
+		dataCategory: 'web-application',
 		direction: 'covid19',
 	},
 	{
@@ -45,7 +45,7 @@ export const portfolioList = [
 	{
 		img: images.onlineMagazine1,
 		title: 'Online Magazine',
-		dataCategory: 'web-design',
+		dataCategory: 'web-application',
 		direction: 'onlineMagazine',
 	},
 	{
