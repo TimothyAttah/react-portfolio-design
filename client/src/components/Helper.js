@@ -18,10 +18,6 @@ export const NavLists = [
 		path: '/portfolio',
 	},
 	{
-		name: 'testimonial',
-		path: '/testimonial',
-	},
-	{
 		name: 'contact',
 		path: '/contact',
 	},
