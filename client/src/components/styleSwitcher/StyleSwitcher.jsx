@@ -111,7 +111,7 @@ export const StyleSwitcher = () => {
             onClick={handleNightDay}
 						className='outer-shadow hover-in-shadow'
           >
-            {night ? <Brightness4 /> : <Brightness7 />}
+            {night ? <Brightness7 /> : <Brightness4 />}
 					</StyleToggler>
 				</IconWrapper>
 			</StyleSwitcherWrapper>
