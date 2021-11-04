@@ -50,8 +50,6 @@ body {
   line-height: 1.5;
   overflow-x: hidden;
   background-color: var(--bg-black-50);
-  border: 2px solid red;
-  /* overflow-y: hidden; */
   ::-webkit-scrollbar {
 		display: none;
 	}
@@ -169,7 +167,6 @@ button{
   left: 50%;
   top: -120px;
   animation: leftBounce 3s ease-in-out infinite;
-  /* border: 3px solid red; */
   @media (max-width:375px){
     left: 40%;
     width: 150px;
@@ -213,7 +210,6 @@ button{
 .effect-5 div{
   width: 1px;
   background-color: #4dd0e1;
-  /* height: 100%; */
 }
 .fade-out-effect{
   position: fixed;
