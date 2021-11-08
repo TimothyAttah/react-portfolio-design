@@ -36,7 +36,7 @@ export const HeaderMenuBtn = styled.div`
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in;
   color: var(--bg-black-900);
   ::after{
     border-radius: 50%;
@@ -46,20 +46,25 @@ export const HeaderMenuBtn = styled.div`
 
 export const Header = ( { open, setOpen } ) => {
   const handleClick = () => {
-    setOpen(!open)
+    setTimeout( () => {
+      setOpen(!open);
+		}, 500);
   }
   return (
-    <HeaderContainer>
-      <Container>
-        <Wrapper primary>
-          <HeaderLogo>
-            <Link to='/'>T</Link>
-          </HeaderLogo>
-          <HeaderMenuBtn onClick={handleClick} className="outer-shadow hover-in-shadow">
-            <Menu />
-          </HeaderMenuBtn>
-        </Wrapper>
-      </Container>
-    </HeaderContainer>
-  )
+		<HeaderContainer>
+			<Container>
+				<Wrapper primary>
+					<HeaderLogo>
+						<Link to='/'>T</Link>
+					</HeaderLogo>
+					<HeaderMenuBtn
+						onClick={handleClick}
+						className='  outer-shadow hover-in-shadow'
+					>
+						<Menu />
+					</HeaderMenuBtn>
+				</Wrapper>
+			</Container>
+		</HeaderContainer>
+	);
 }

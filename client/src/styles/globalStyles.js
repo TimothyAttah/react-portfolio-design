@@ -84,6 +84,10 @@ img {
   vertical-align: middle;
   max-width: 100%;
 }
+button{
+  outline: none;
+  border: none;
+}
 
 .container {
   max-width: 1140px;
@@ -198,6 +202,22 @@ img {
   background-color: #4dd0e1;
   /* height: 100%; */
 }
+.fade-out-effect{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  background-color: var(---bg-black-50);
+  z-index: 1;
+  visibility: hidden;
+}
+.fade-out-effect.active{
+  visibility: visible;
+  z-index: 1000;
+  animation: fadeOut 0.3s ease-out;
+}
 @keyframes spin {
   0%{
     transform: rotate(0deg);
@@ -230,6 +250,14 @@ img {
   100%{
     opacity: 1;
     transform: translateY(0px);
+  }
+}
+@keyframes fadeOut{
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
   }
 }
 `;
