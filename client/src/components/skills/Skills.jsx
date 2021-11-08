@@ -16,9 +16,14 @@ export const SkillItem = styled.div`
 	padding: 15px 0;
 	margin-bottom: 40px;
 	position: relative;
-	border-radius: 20px;
+	border-radius: 5px;
 	color: var(--text-black-900);
 	font-weight: 700;
+	transition: all 0.3s ease;
+	:hover{
+		box-shadow: var(--outer-shadow);
+		cursor: pointer;
+	}
 	.MuiSvgIcon-root {
 		position: absolute;
 		left: 10px;
@@ -30,36 +35,36 @@ export const Skills = () => {
 	return (
 		<SkillsContainer className='active'>
 			<Wrapper primary alignItems className='skills__container'>
-				<SkillItem className='outer-shadow'>
+				<SkillItem className='inner-shadow'>
 					<ArrowRightAltTwoTone />
 					<p>Html</p>
 				</SkillItem>
-				<SkillItem className='outer-shadow'>
+				<SkillItem className='inner-shadow'>
 					<ArrowRightAltTwoTone />
 					<p>Javascript</p>
 				</SkillItem>
 
-				<SkillItem className='outer-shadow'>
+				<SkillItem className='inner-shadow'>
 					<ArrowRightAltTwoTone />
 					<p>React/Redux</p>
 				</SkillItem>
 
-				<SkillItem className='outer-shadow'>
+				<SkillItem className='inner-shadow'>
 					<ArrowRightAltTwoTone />
 					<p>Git/GitHub</p>
 				</SkillItem>
 
-				<SkillItem className='outer-shadow'>
+				<SkillItem className='inner-shadow'>
 					<ArrowRightAltTwoTone />
 					<p>NodeJs/Express</p>
 				</SkillItem>
 
-				<SkillItem className='outer-shadow'>
+				<SkillItem className='inner-shadow'>
 					<ArrowRightAltTwoTone />
 					<p>MongoDB</p>
 				</SkillItem>
 
-				<SkillItem className='outer-shadow'>
+				<SkillItem className='inner-shadow'>
 					<ArrowRightAltTwoTone />
 					<p>Postgres/SQL</p>
 				</SkillItem>
