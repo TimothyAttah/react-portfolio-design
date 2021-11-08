@@ -53,11 +53,14 @@ export const PortfolioSectionItems = styled.div`
 export const PortfolioSectionItem = styled.div`
 	flex: 0 0 33.33%;
 	max-width: 33.33%;
-	/* flex: 0 0 50%;
-	max-width: 50%; */
 	padding: 15px;
 	display: flex;
 	flex-wrap: wrap;
+	@media (max-width: 540px) {
+		flex: 0 0 100%;
+		max-width: 100%;
+		width: 100%;
+	}
 `;
 export const PortfolioSectionItemInner = styled.div`
 	padding: 15px;

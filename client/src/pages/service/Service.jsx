@@ -14,6 +14,11 @@ export const ServiceItem = styled.section`
 	padding: 15px;
 	display: flex;
 	flex-wrap: wrap;
+	@media (max-width: 540px) {
+		flex: 0 0 100%; //0 0 33.33% 0 0 100%
+		max-width: 100%;
+		width: 100%;
+	}
 `;
 export const ServiceItemInner = styled.section`
 	padding: 50px 15px;
@@ -64,17 +69,17 @@ export const ServiceItemInner = styled.section`
 		}
 	}
 	h3 {
-		font-size: 1.5rem;
+		font-size: 1.8rem;
 		font-weight: 600;
 		color: var(--text-black-700);
 		margin: 0 0 10px;
 		text-transform: capitalize;
 	}
 	p {
-		font-size: 1rem;
+		font-size: 1.2rem;
 		color: var(--text-black-600);
 		margin: 0;
-		line-height: 26px;
+		line-height: 32px;
 	}
 `;
 // export const ServiceSection = styled.section`
