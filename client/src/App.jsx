@@ -1,8 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import { Slider } from './components/slider/Slider';
 import { About } from './pages/about/About';
 import { AllPages } from './pages/AllPages';
 import { Home } from './pages/home/Home';
+import { Portfolio } from './pages/portfolio/Portfolio';
 import { Service } from './pages/service/Service';
 
 export const App = () => {
@@ -16,6 +18,7 @@ export const App = () => {
             <Home />
 						<About />
 						<Service />
+						<Portfolio />
 					</Route>
 					<Route exact path='/home'>
 						<AllPages />
@@ -28,6 +31,14 @@ export const App = () => {
 					<Route exact path='/services'>
 						<AllPages />
 						<Service />
+					</Route>
+					<Route exact path='/portfolio'>
+						<AllPages />
+						<Portfolio />
+					</Route>
+					<Route exact path='/slider'>
+						<AllPages />
+						<Slider />
 					</Route>
 				</div>
 			</Switch>

@@ -17,7 +17,7 @@ import {
 	AboutTabContent,
 	AboutTabs,
 	AboutTabsItem,
-} from './About';
+} from './AboutStyles';
 
 export const About = () => {
 	const [skills, setSkills] = useState(true);

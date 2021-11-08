@@ -51,8 +51,12 @@ body {
   overflow-x: hidden;
   background-color: var(--bg-black-50);
   border: 2px solid red;
+  /* overflow-y: hidden; */
+  ::-webkit-scrollbar {
+		display: none;
+	}
 }
-body.hidden-scrolling{
+body.stop-scrolling{
   overflow-y:hidden;
 }
 *:not(i){
