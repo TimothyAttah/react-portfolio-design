@@ -1,4 +1,5 @@
-import { createGlobalStyle } from 'styled-components';
+import styled, {css, createGlobalStyle } from 'styled-components';
+
 
 export const GlobalStyle = createGlobalStyle`
   /* *************** FONTS *************************** */
@@ -78,6 +79,12 @@ ul{
 img {
   vertical-align: middle;
   max-width: 100%;
+}
+
+.container {
+  max-width: 1140px;
+  background-color: red;
+  margin: auto;
 }
 
 .row {
@@ -221,4 +228,18 @@ img {
     transform: translateY(0px);
   }
 }
+`;
+
+export const Container = styled.div`
+	max-width: 1140px;
+	margin: auto;
+`;
+export const Wrapper = styled.div`
+	display: flex;
+	flex-wrap: wrap;
+	${props =>
+		props.primary &&
+		css`
+			justify-content: space-between;
+		`}
 `;
