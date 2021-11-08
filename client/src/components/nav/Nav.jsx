@@ -16,7 +16,7 @@ export const NavMenu = styled.nav`
   /* z-index: -1;
   opacity: 0;
   visibility: hidden; */
-  overflow-y: auto;
+  /* overflow-y: auto; */
 `;
 
 export const CloseNavMenu = styled.div`
@@ -28,7 +28,7 @@ export const CloseNavMenu = styled.div`
   border-radius: 50%;
   text-align: center;
   position: absolute;
-  right: 15px;
+  right: 15px !important;
   top: 15px;
   cursor: pointer;
   color: var(--text-black-600);
