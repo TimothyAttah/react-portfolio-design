@@ -99,7 +99,7 @@ export const Nav = ( { open, setOpen } ) => {
 							<NavLink
 								activeStyle={activeLink}
 								to={item.path}
-								target='_blank'
+								// target='_blank'
 								className='outer-shadow hover-in-shadow'
 							>
 								{item.name}
