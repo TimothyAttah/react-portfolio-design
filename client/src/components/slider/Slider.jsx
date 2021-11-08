@@ -3,8 +3,8 @@ import { ArrowLeftOutlined, ArrowRightOutlined } from '@material-ui/icons';
 import { quizItems } from '../images';
 import {
   Container, Arrow, Wrapper,
-  Slide, ImageContainer, InfoContainer,
-  Image, Desc, Button, Title
+  Slide, ImageContainer, 
+  Image,
 } from './SliderStyles';
 
 export const Slider = () => {

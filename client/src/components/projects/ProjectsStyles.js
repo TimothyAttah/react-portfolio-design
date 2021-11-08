@@ -111,6 +111,7 @@ export const PortfolioPopupMain = styled.div`
 `;
 export const PortfolioPopupMainInner = styled.div`
 	padding: 70px 0 50px;
+	transition: all 1.5s ease;
 	position: relative;
 	.pp-img {
 		max-width: 100%;
@@ -118,6 +119,7 @@ export const PortfolioPopupMainInner = styled.div`
 		height: auto;
 		padding: 10px;
 		border-radius: 5px;
+		transition: all 0.3s ease;
 	}
 	.pp-project-details-btn {
 		position: absolute;
@@ -199,6 +201,7 @@ export const PortfolioPopupTitle = styled.div`
 		span {
 			font-weight: 400;
 			text-transform: capitalize;
+			margin-left: 10px;
 		}
 	}
 `;

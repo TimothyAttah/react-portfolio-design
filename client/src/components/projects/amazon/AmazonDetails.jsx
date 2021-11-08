@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Wrapper } from '../../../styles/globalStyles';
 
+import { Wrapper } from '../../../styles/globalStyles';
 import {
 	PortfolioPopupDetails,
 	PortfolioPopupDetailsInner,
@@ -11,16 +11,16 @@ import {
 
 export const AmazonDetails = () => {
 	return (
-		<div>
+		<>
 			<PortfolioPopupDetails className='pp-details'>
-				<PortfolioPopupDetailsInner className='pp-details-inner'>
+				<PortfolioPopupDetailsInner>
 					<PortfolioPopupTitle>
 						<h2>Amazon Clone Demo App</h2>
 						<p>
-							Category -<span className='pp-project-category'>E-Commerce</span>
+							Category - <span>E-Commerce</span>
 						</p>
 					</PortfolioPopupTitle>
-					<PortfolioPopupProjectsDetails className='pp-project-details'>
+					<PortfolioPopupProjectsDetails>
 						<Wrapper>
 							<div className='description'>
 								<h3>Project Brief:</h3>
@@ -33,7 +33,7 @@ export const AmazonDetails = () => {
 										Date - <span>2021</span>
 									</li>
 									<li>
-										Source Code -{' '}
+										Source Code -
 										<span>
 											<Link
 												to='https://github.com/TimothyAttah/amazon-clone'
@@ -45,11 +45,11 @@ export const AmazonDetails = () => {
 										</span>
 									</li>
 									<li>
-										Tools -{' '}
+										Tools -
 										<span>Express, React, NodeJs, Firebase, Stripe</span>
 									</li>
 									<li>
-										Live Demo -{' '}
+										Live Demo -
 										<span>
 											<Link
 												to='www.Covid-19-Tracker.netlify.com'
@@ -66,6 +66,6 @@ export const AmazonDetails = () => {
 					</PortfolioPopupProjectsDetails>
 				</PortfolioPopupDetailsInner>
 			</PortfolioPopupDetails>
-		</div>
+		</>
 	);
 };

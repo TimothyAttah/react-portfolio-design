@@ -1,25 +1,21 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
 import { StyleSwitcher } from './components/styleSwitcher/StyleSwitcher';
-import { About } from './pages/about/About';
-import { AllPages } from './pages/AllPages';
+import { MainHeader } from './components/header/MainHeader';
 import { Contact } from './pages/contact/Contact';
+import { About } from './pages/about/About';
 import { Home } from './pages/home/Home';
 import { Portfolio } from './pages/portfolio/Portfolio';
 import { Service } from './pages/service/Service';
 
-
-
-
 export const App = () => {
-  return (
+	return (
 		<Router>
-			{/* <AllPages /> */}
-
 			<Switch>
 				<div style={{ marginTop: '100px' }}>
 					<Route exact path='/'>
-						<AllPages />
+						<MainHeader />
 						<Home />
 						<About />
 						<Service />
@@ -27,23 +23,23 @@ export const App = () => {
 						<Contact />
 					</Route>
 					<Route exact path='/home'>
-						<AllPages />
+						<MainHeader />
 						<Home />
 					</Route>
 					<Route exact path='/about'>
-						<AllPages />
+						<MainHeader />
 						<About />
 					</Route>
 					<Route exact path='/services'>
-						<AllPages />
+						<MainHeader />
 						<Service />
 					</Route>
 					<Route exact path='/portfolio'>
-						<AllPages />
+						<MainHeader />
 						<Portfolio />
 					</Route>
 					<Route exact path='/contact'>
-						<AllPages />
+						<MainHeader />
 						<Contact />
 					</Route>
 				</div>
@@ -51,4 +47,4 @@ export const App = () => {
 			<StyleSwitcher />
 		</Router>
 	);
-}
+};

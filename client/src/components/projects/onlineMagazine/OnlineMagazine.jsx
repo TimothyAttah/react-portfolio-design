@@ -7,28 +7,25 @@ import {
 	Close,
 	Remove,
 } from '@material-ui/icons';
-import { OnlineMagazineItems } from '../../images';
 
+import { OnlineMagazineItems } from '../../images';
+import { OnlineMagazineDetails } from './OnlineMagazineDetails';
 import {
 	PortfolioPopup,
 	PortfolioPopupMain,
 	PortfolioPopupMainInner,
 	Loader,
 } from '../ProjectsStyles';
-import { OnlineMagazineDetails } from './OnlineMagazineDetails';
 
 export const OnlineMagazine = ({ close }) => {
 	const [openDetails, setOpenDetails] = useState(false);
 	let [slideIndex, setSlideIndex] = useState(0);
+	const [loader, setLoader] = useState(false);
+	const imgSrc = OnlineMagazineItems[ slideIndex ];
+	
 	const handleOpenDetails = () => {
 		setOpenDetails(!openDetails);
 	};
-
-	const [loader, setLoader] = useState(false);
-
-	const imgSrc = OnlineMagazineItems[slideIndex];
-
-	console.log(imgSrc?.img);
 
 	const handleNextBtn = () => {
 		if (slideIndex > OnlineMagazineItems.length - 1) {
@@ -43,7 +40,6 @@ export const OnlineMagazine = ({ close }) => {
 
 	const handlePrevBtn = () => {
 		if (slideIndex === 0) {
-			// setSlideIndex(0);
 			setSlideIndex((slideIndex = OnlineMagazineItems.length - 1));
 		} else {
 			setSlideIndex(slideIndex--);
@@ -54,15 +50,15 @@ export const OnlineMagazine = ({ close }) => {
 
 	useEffect(() => {
 		handleNextBtn();
-	}, [handleNextBtn]);
+	}, [ handleNextBtn ] );
+	
 	return (
 		<>
-			<PortfolioPopup className='pp portfolio-popup'>
+			<PortfolioPopup>
 				{openDetails && <OnlineMagazineDetails />}
 				<div className='separator'></div>
-
-				<PortfolioPopupMain className='pp-main'>
-					<PortfolioPopupMainInner className='pp-main-inner'>
+				<PortfolioPopupMain>
+					<PortfolioPopupMainInner>
 						<div
 							onClick={handleOpenDetails}
 							className='pp-project-details-btn outer-shadow  hover-in-shadow'
@@ -76,12 +72,10 @@ export const OnlineMagazine = ({ close }) => {
 						>
 							<Close />
 						</div>
-
 						<img src={imgSrc?.img} alt='' className='pp-img outer-shadow ' />
-
-						<div className='pp-counter'>{`${slideIndex + 1} of ${
-							OnlineMagazineItems.length
-						}`}</div>
+						<div className='pp-counter'>
+							{ `${ slideIndex + 1 } of ${	OnlineMagazineItems.length}` }
+						</div>
 					</PortfolioPopupMainInner>
 					{loader && (
 						<Loader className='.pp-loader'>

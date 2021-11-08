@@ -1,9 +1,9 @@
 import React from 'react'
-// import { Link } from 'react-router-dom'
+import {  Link } from 'react-router-dom'
 
 import styled from 'styled-components'
 
-const Link = styled.a`
+const LinkContainer = styled(Link)`
   padding: 10px 25px;
   font-size: 16px;
   font-weight: 500;
@@ -21,8 +21,8 @@ const Link = styled.a`
 
 export const Button = ({children, props, target}) => {
   return (
-    <Link href={props} target={target} className='outer-shadow hover-in-shadow'>
+    <LinkContainer to={props} target={target} className='outer-shadow hover-in-shadow'>
       {children}
-    </Link>
+    </LinkContainer>
   )
 }

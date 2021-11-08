@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Wrapper } from '../../../styles/globalStyles';
-import QuizImg from '../../../images/quiz/quiz-1.png';
 import { Link } from 'react-router-dom';
 import {
 	Add,
@@ -10,8 +9,8 @@ import {
 	Close,
 	Remove,
 } from '@material-ui/icons';
-import { quizItems, quizImages } from '../../images';
-import e from 'cors';
+import { quizImages } from '../../images';
+
 
 export const PortfolioPopup = styled.div`
 	background-color: var(--bg-black-50);

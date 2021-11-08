@@ -1,31 +1,27 @@
-import { images } from "./images"
+import { images } from './images';
 
 export const NavLists = [
-  {
-    name: 'home',
-    path: '/home'
-  },
-  {
-    name: 'about',
-    path: '/about'
-  },
-  {
-    name: 'services',
-    path: '/services'
-  },
-  {
-    name: 'portfolio',
-    path: '/portfolio'
-  },
-  {
-    name: 'testimonial',
-    path: '/testimonial'
-  },
-  {
-    name: 'contact',
-    path: '/contact'
-  },
-]
+	{
+		name: 'home',
+		path: '/home',
+	},
+	{
+		name: 'about',
+		path: '/about',
+	},
+	{
+		name: 'services',
+		path: '/services',
+	},
+	{
+		name: 'portfolio',
+		path: '/portfolio',
+	},
+	{
+		name: 'contact',
+		path: '/contact',
+	},
+];
 
 export const portfolioList = [
 	{
@@ -37,7 +33,7 @@ export const portfolioList = [
 	{
 		img: images.covid1,
 		title: 'Covid-19 Tracker',
-		dataCategory: 'e-commerce',
+		dataCategory: 'web-application',
 		direction: 'covid19',
 	},
 	{
@@ -49,7 +45,7 @@ export const portfolioList = [
 	{
 		img: images.onlineMagazine1,
 		title: 'Online Magazine',
-		dataCategory: 'web-design',
+		dataCategory: 'web-application',
 		direction: 'onlineMagazine',
 	},
 	{
@@ -76,5 +72,32 @@ export const portfolioListItem = [
 	{
 		name: 'e commerce',
 		dataTarget: 'e-commerce',
+	},
+];
+
+export const skillItem = [
+	{
+		name: 'HTML',
+	},
+	{
+		name: 'CSS',
+	},
+	{
+		name: 'Javascript',
+	},
+	{
+		name: 'React/Redux',
+	},
+	{
+		name: 'Nodejs/Express',
+	},
+	{
+		name: 'MongoDB',
+	},
+	{
+		name: 'Git/GitHub',
+	},
+	{
+		name: 'Postgres/SQL',
 	},
 ];

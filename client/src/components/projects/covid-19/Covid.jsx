@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from 'react';
 import {
 	Add,
@@ -6,9 +7,9 @@ import {
 	Close,
 	Remove,
 } from '@material-ui/icons';
+
 import { covidItems } from '../../images';
 import { CovidDetails } from './CovidDetails';
-
 import {
 	PortfolioPopup,
 	PortfolioPopupMain,
@@ -19,49 +20,45 @@ import {
 export const Covid = ({close}) => {
 	const [openDetails, setOpenDetails] = useState(false);
 	let [slideIndex, setSlideIndex] = useState(0);
+	const [loader, setLoader] = useState(false);
+	const imgSrc = covidItems[ slideIndex ];
+	
 	const handleOpenDetails = () => {
 		setOpenDetails(!openDetails);
 	};
 
-	const [loader, setLoader] = useState(false);
-
-	const imgSrc = covidItems[slideIndex];
-
-	console.log(imgSrc?.img);
-
 	const handleNextBtn = () => {
 		if (slideIndex > covidItems.length - 1) {
-			setSlideIndex(0);
-			// setLoader(true)
+			setSlideIndex( 0 );
+			setLoader( true );
 		} else {
-			setSlideIndex(slideIndex++);
-			setLoader(true);
+			setSlideIndex( slideIndex++ );
+			setLoader( true );
 		}
-		setLoader(false);
+		setLoader( false );
 	};
 
 	const handlePrevBtn = () => {
 		if (slideIndex === 0) {
-			// setSlideIndex(0);
 			setSlideIndex((slideIndex = covidItems.length - 1));
 		} else {
-			setSlideIndex(slideIndex--);
-			setLoader(true);
+			setSlideIndex( slideIndex-- );
+			setLoader( true );
 		}
-		setLoader(false);
+		setLoader( false );
 	};
 
-	useEffect(() => {
+	useEffect( () => {
 		handleNextBtn();
-	}, [handlePrevBtn]);
+	}, [ handleNextBtn ] );
+
 	return (
 		<>
-			<PortfolioPopup className='pp portfolio-popup'>
+			<PortfolioPopup>
 				{openDetails && <CovidDetails />}
 				<div className='separator'></div>
-
-				<PortfolioPopupMain className='pp-main'>
-					<PortfolioPopupMainInner className='pp-main-inner'>
+				<PortfolioPopupMain>
+					<PortfolioPopupMainInner>
 						<div
 							onClick={handleOpenDetails}
 							className='pp-project-details-btn outer-shadow  hover-in-shadow'
@@ -75,12 +72,10 @@ export const Covid = ({close}) => {
 						>
 							<Close />
 						</div>
-
 						<img src={imgSrc?.img} alt='' className='pp-img outer-shadow ' />
-
-						<div className='pp-counter'>{`${slideIndex + 1} of ${
-							covidItems.length
-						}`}</div>
+						<div className='pp-counter'>
+							{ `${ slideIndex + 1 } of ${covidItems.length	}` }
+						</div>
 					</PortfolioPopupMainInner>
 					{loader && (
 						<Loader className='.pp-loader'>
