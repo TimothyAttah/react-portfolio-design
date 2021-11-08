@@ -41,6 +41,7 @@ export const ServiceItemInner = styled.section`
 		border-radius: 50%;
 		transition: all 0.3s ease;
 		margin: 0 auto 30px;
+		color: var(--text-black-700);
 		position: relative;
 		::after {
 			content: '';
@@ -58,6 +59,7 @@ export const ServiceItemInner = styled.section`
 		.MuiSvgIcon-root {
 			font-size: 2rem;
 			line-height: 60px;
+
 			transition: all 0.3s ease;
 		}
 	}
