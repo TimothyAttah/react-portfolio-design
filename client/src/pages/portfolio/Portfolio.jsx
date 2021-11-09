@@ -18,12 +18,14 @@ import {
 	PortfolioSectionItemTitle,
 	PortfolioSectionItems,
 } from './PortfolioStyles';
+import { PersonalPortfolio } from '../../components/projects/personalPortfolio/PersonalPortfolio';
 
 export const Portfolio = () => {
 	const [openCovid, setOpenCovid] = useState(false);
 	const [openBudgetary, setOpenBudgetary] = useState(false);
 	const [openAmazon, setOpenAmazon] = useState(false);
 	const [openQuiz, setOpenQuiz] = useState(false);
+	const [openPersonalPortfolio, setOpenPersonalPortfolio] = useState(false);
 	const [openOnlineMagazine, setOpenOnlineMagazine] = useState(false);
 
 	const handleOpen = direction => {
@@ -35,7 +37,10 @@ export const Portfolio = () => {
 			setOpenOnlineMagazine(true);
 		} else if (direction === 'budgetary') {
 			setOpenBudgetary(true);
-		} else {
+		} else if ( direction === 'personalPortfolio' ) {
+			setOpenPersonalPortfolio( true );
+		}
+		else {
 			setOpenAmazon(true);
 		}
 	};
@@ -140,6 +145,7 @@ export const Portfolio = () => {
 			{openCovid && <Covid close={setOpenCovid} />}
 			{openBudgetary && <Budgetary close={setOpenBudgetary} />}
 			{openAmazon && <Amazon close={setOpenAmazon} />}
+			{openPersonalPortfolio && <PersonalPortfolio close={setOpenPersonalPortfolio} />}
 			{openOnlineMagazine && <OnlineMagazine close={setOpenOnlineMagazine} />}
 		</PortfolioContainer>
 	);

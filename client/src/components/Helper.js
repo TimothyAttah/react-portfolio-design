@@ -49,6 +49,12 @@ export const portfolioList = [
 		direction: 'onlineMagazine',
 	},
 	{
+		img: images.personal0,
+		title: 'Personal Portfolio Design',
+		dataCategory: 'web-design',
+		direction: 'personalPortfolio',
+	},
+	{
 		img: images.amazon1,
 		title: 'Amazon Clone Demo App',
 		dataCategory: 'e-commerce',

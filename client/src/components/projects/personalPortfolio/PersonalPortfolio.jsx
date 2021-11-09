@@ -8,8 +8,8 @@ import {
 	Remove,
 } from '@material-ui/icons';
 
-import { covidItems } from '../../images';
-import { CovidDetails } from './CovidDetails';
+import { personalItems } from '../../images';
+import { PersonalPortfolioDetails } from './PersonalPortfolioDetails';
 import {
 	PortfolioPopup,
 	PortfolioPopupMain,
@@ -17,18 +17,18 @@ import {
 	Loader,
 } from '../ProjectsStyles';
 
-export const Covid = ({ close }) => {
+export const PersonalPortfolio = ({ close }) => {
 	const [openDetails, setOpenDetails] = useState(false);
 	let [slideIndex, setSlideIndex] = useState(0);
 	const [loader, setLoader] = useState(false);
-	const imgSrc = covidItems[slideIndex];
+	const imgSrc = personalItems[slideIndex];
 
 	const handleOpenDetails = () => {
 		setOpenDetails(!openDetails);
 	};
 
 	const handleNextBtn = () => {
-		if (slideIndex > covidItems.length - 1) {
+		if (slideIndex > personalItems.length - 1) {
 			setSlideIndex(0);
 			setLoader(true);
 		} else {
@@ -40,7 +40,7 @@ export const Covid = ({ close }) => {
 
 	const handlePrevBtn = () => {
 		if (slideIndex === 0) {
-			setSlideIndex((slideIndex = covidItems.length - 1));
+			setSlideIndex((slideIndex = personalItems.length - 1));
 		} else {
 			setSlideIndex(slideIndex--);
 			setLoader(true);
@@ -55,7 +55,7 @@ export const Covid = ({ close }) => {
 	return (
 		<>
 			<PortfolioPopup>
-				{openDetails && <CovidDetails />}
+				{openDetails && <PersonalPortfolioDetails />}
 				<div className='separator'></div>
 				<PortfolioPopupMain>
 					<PortfolioPopupMainInner>
@@ -74,7 +74,7 @@ export const Covid = ({ close }) => {
 						</div>
 						<img src={imgSrc?.img} alt='' className='pp-img outer-shadow ' />
 						<div className='pp-counter'>
-							{`${slideIndex + 1} of ${covidItems.length}`}
+							{`${slideIndex + 1} of ${personalItems.length}`}
 						</div>
 					</PortfolioPopupMainInner>
 					{loader && (
@@ -82,7 +82,7 @@ export const Covid = ({ close }) => {
 							<div></div>
 						</Loader>
 					)}
-					{covidItems.length > 1 && (
+					{personalItems.length > 1 && (
 						<>
 							<div onClick={handlePrevBtn} className='pp-prev'>
 								<ArrowLeft />

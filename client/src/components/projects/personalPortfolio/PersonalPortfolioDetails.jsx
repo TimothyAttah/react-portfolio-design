@@ -8,7 +8,7 @@ import {
 	PortfolioPopupTitle,
 } from '../ProjectsStyles';
 
-export const CovidDetails = () => {
+export const PersonalPortfolioDetails = () => {
 	return (
 		<>
 			<PortfolioPopupDetails>
@@ -16,16 +16,14 @@ export const CovidDetails = () => {
 					<PortfolioPopupTitle>
 						<h2>Personal Portfolio</h2>
 						<p>
-							Category -<span>Web Application</span>
+							Category -<span>Web Design</span>
 						</p>
 					</PortfolioPopupTitle>
 					<PortfolioPopupProjectsDetails>
 						<Wrapper>
 							<div className='description'>
 								<h3>Project Brief:</h3>
-								<p>
-									Personal portfolio website. 
-								</p>
+								<p>Personal portfolio website.</p>
 							</div>
 							<div className='info'>
 								<h3>Project Info</h3>
