@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Wrapper } from '../../../styles/globalStyles';
 
 import {
@@ -17,8 +16,7 @@ export const CovidDetails = () => {
 					<PortfolioPopupTitle>
 						<h2>Covid-19 Tracker</h2>
 						<p>
-							Category -
-							<span>Web Application</span>
+							Category -<span>Web Application</span>
 						</p>
 					</PortfolioPopupTitle>
 					<PortfolioPopupProjectsDetails>
@@ -39,13 +37,14 @@ export const CovidDetails = () => {
 									<li>
 										Source Code -
 										<span>
-											<Link
-												to='www.github.com/timothyattah/Covid-19-Tracker'
+											<a
+												href='https://github.com/TimothyAttah/Covid19-Tracker'
 												className='outer-shadow'
 												target='_blank'
+												rel='noopener noreferrer'
 											>
 												Covid-19 Tracker
-											</Link>
+											</a>
 										</span>
 									</li>
 									<li>
@@ -54,13 +53,14 @@ export const CovidDetails = () => {
 									<li>
 										Live Demo -
 										<span>
-											<Link
-												to='www.Covid-19-Tracker.netlify.com'
+											<a
+												href='https://covid-19-tracker-app-v1.netlify.app'
 												target='_blank'
 												className='outer-shadow'
+												rel='noopener noreferrer'
 											>
 												Covid-19 Tracker
-											</Link>
+											</a>
 										</span>
 									</li>
 								</ul>
