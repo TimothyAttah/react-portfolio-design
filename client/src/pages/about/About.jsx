@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { GitHub, Facebook, LinkedIn } from '@material-ui/icons';
-import { Link } from 'react-router-dom';
 
 import PDF from '../../timothyattah.pdf';
 import { Container, Wrapper, SectionTitle } from '../../styles/globalStyles';
@@ -58,27 +57,30 @@ export const About = () => {
 							/>
 						</div>
 						<AboutSocialLinks>
-							<Link
-								to='https://www.facebook.com/timothy.attah2'
-								className='outer-shadow hover-in-shadow'
+							<a
+								href='https://www.facebook.com/timothy.attah2'
 								target='_blank'
+								rel='noopener noreferrer'
+								className='outer-shadow hover-in-shadow'
 							>
 								<Facebook />
-							</Link>
-							<Link
-								to='www.github.com/timothyattah'
+							</a>
+							<a
+								href='https://www.github.com/timothyattah'
 								className='outer-shadow hover-in-shadow'
 								target='_blank'
+								rel='noopener noreferrer'
 							>
 								<GitHub />
-							</Link>
-							<Link
-								to='www.linkedin.com/in/timothy-attah-447077158'
+							</a>
+							<a
+								href='https://www.linkedin.com/in/timothy-attah-447077158'
 								className='outer-shadow hover-in-shadow'
 								target='_blank'
+								rel='noopener noreferrer'
 							>
 								<LinkedIn />
-							</Link>
+							</a>
 						</AboutSocialLinks>
 					</AboutImg>
 					<AboutInfo>
