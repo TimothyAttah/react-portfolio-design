@@ -59,7 +59,7 @@ export const About = () => {
 						</div>
 						<AboutSocialLinks>
 							<Link
-								to='www.facebook.com/timothyattah'
+								to='https://www.facebook.com/timothy.attah2'
 								className='outer-shadow hover-in-shadow'
 								target='_blank'
 							>
