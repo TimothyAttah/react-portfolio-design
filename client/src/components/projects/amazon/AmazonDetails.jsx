@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import { Wrapper } from '../../../styles/globalStyles';
 import {
@@ -35,29 +34,30 @@ export const AmazonDetails = () => {
 									<li>
 										Source Code -
 										<span>
-											<Link
-												to='https://github.com/TimothyAttah/amazon-clone'
+											<a
+												href='https://github.com/TimothyAttah/amazon-clone'
 												className='outer-shadow'
 												target='_blank'
+												rel='noopener noreferrer'
 											>
 												Amazon Clone
-											</Link>
+											</a>
 										</span>
 									</li>
 									<li>
-										Tools -
-										<span>Express, React, NodeJs, Firebase, Stripe</span>
+										Tools -<span>Express, React, NodeJs, Firebase, Stripe</span>
 									</li>
 									<li>
 										Live Demo -
 										<span>
-											<Link
-												to='www.Covid-19-Tracker.netlify.com'
+											<a
+												href='https://amazon-clone-demo-app.netlify.app'
 												target='_blank'
 												className='outer-shadow'
+												rel='noopener noreferrer'
 											>
 												Amazon Clone
-											</Link>
+											</a>
 										</span>
 									</li>
 								</ul>
