@@ -88,7 +88,7 @@ export const About = () => {
 							<span>Hi! my name is Timothy Attah. I am a Web Developer, </span>
 							and i specialize in efficient React App and HTML and CSS, that
 							just works across all platforms and browsers. I'm passionate about
-							creating and developing web interfaces. I have many years of
+							creating and developing web interfaces. I have
 							experience in this area of work with multiple quality projects.
 						</p>
 						<p>
