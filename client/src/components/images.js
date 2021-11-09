@@ -21,12 +21,18 @@ import amazon2 from '../images/amazon/amazon-1.png';
 import amazon3 from '../images/amazon/amazon-2.png';
 import amazon4 from '../images/amazon/amazon-3.png';
 
+import personal1 from '../images/personal/personal-1.png';
+import personal2 from '../images/personal/personal-2.png';
+import personal3 from '../images/personal/personal-3.png';
+import personal4 from '../images/personal/personal-4.png';
+
 export const images = {
 	quiz1,
 	covid1,
 	budget1,
 	amazon1,
 	onlineMagazine1,
+	personal1
 };
 
 export const quizItems = [
@@ -41,6 +47,20 @@ export const quizItems = [
 	},
 	{
 		img: quiz4,
+	},
+];
+export const personalItems = [
+	{
+		img: personal1,
+	},
+	{
+		img: personal2,
+	},
+	{
+		img: personal3,
+	},
+	{
+		img: personal4,
 	},
 ];
 export const covidItems = [
