@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Wrapper } from '../../../styles/globalStyles';
 
+import { Wrapper } from '../../../styles/globalStyles';
 import {
 	PortfolioPopupDetails,
 	PortfolioPopupDetailsInner,
@@ -17,8 +16,7 @@ export const OnlineMagazineDetails = () => {
 					<PortfolioPopupTitle>
 						<h2>Online Magazine</h2>
 						<p>
-							Category -
-							<span>Web Application</span>
+							Category -<span>Web Application</span>
 						</p>
 					</PortfolioPopupTitle>
 					<PortfolioPopupProjectsDetails>
@@ -39,13 +37,14 @@ export const OnlineMagazineDetails = () => {
 									<li>
 										Source Code -
 										<span>
-											<Link
-												to='www.github.com/timothyattah/online-magazine'
+											<a
+												href='https://github.com/TimothyAttah/Online-magazines'
 												className='outer-shadow'
 												target='_blank'
+												rel='noopener noreferrer'
 											>
 												Online Magazine
-											</Link>
+											</a>
 										</span>
 									</li>
 									<li>
@@ -54,13 +53,14 @@ export const OnlineMagazineDetails = () => {
 									<li>
 										Live Demo -
 										<span>
-											<Link
-												to='https://online-magazine.netlify.com'
+											<a
+												href='https://online-magazines.netlify.app'
 												target='_blank'
 												className='outer-shadow'
+												rel='noopener noreferrer'
 											>
 												Online Magazine
-											</Link>
+											</a>
 										</span>
 									</li>
 								</ul>
