@@ -73,7 +73,7 @@ export const About = () => {
 								<GitHub />
 							</Link>
 							<Link
-								to='www/linkedin.com/timothyattah'
+								to='www.linkedin.com/in/timothy-attah-447077158'
 								className='outer-shadow hover-in-shadow'
 								target='_blank'
 							>
