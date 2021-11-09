@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import { Wrapper } from '../../../styles/globalStyles';
 import {
@@ -17,8 +16,7 @@ export const BudgetaryDetails = () => {
 					<PortfolioPopupTitle>
 						<h2>Budgetary</h2>
 						<p>
-							Category -
-							<span>Web Application</span>
+							Category -<span>Web Application</span>
 						</p>
 					</PortfolioPopupTitle>
 					<PortfolioPopupProjectsDetails>
@@ -39,13 +37,14 @@ export const BudgetaryDetails = () => {
 									<li>
 										Source Code -
 										<span>
-											<Link
-												to='https://github.com/TimothyAttah/Budgets-Tracker'
+											<a
+												href='https://github.com/TimothyAttah/PernStack-Budgets-Tracker'
 												className='outer-shadow'
 												target='_blank'
+												rel='noopener noreferrer'
 											>
 												Budgetary
-											</Link>
+											</a>
 										</span>
 									</li>
 									<li>
@@ -55,13 +54,14 @@ export const BudgetaryDetails = () => {
 									<li>
 										Live Demo -
 										<span>
-											<Link
-												to='www.budgetary.netlify.com'
+											<a
+												href='https://agitated-raman-3d6bb7.netlify.app/'
 												target='_blank'
 												className='outer-shadow'
+												rel='noopener noreferrer'
 											>
 												Budgetary
-											</Link>
+											</a>
 										</span>
 									</li>
 								</ul>
