@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 import { StyleSwitcher } from './components/styleSwitcher/StyleSwitcher';
 import { MainHeader } from './components/header/MainHeader';
@@ -10,6 +11,7 @@ import { Portfolio } from './pages/portfolio/Portfolio';
 import { Service } from './pages/service/Service';
 
 export const App = () => {
+	toast.configure();
 	return (
 		<Router>
 			<Switch>

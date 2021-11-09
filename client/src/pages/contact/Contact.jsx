@@ -2,6 +2,7 @@ import React from 'react'
 import { Wrapper, Container, SectionTitle } from '../../styles/globalStyles';
 import { Email, Home, Phone } from '@material-ui/icons';
 import emailjs from 'emailjs-com';
+import { toast } from 'react-toastify';
 
 import {
 	ContactItemInner,
@@ -44,12 +45,14 @@ export const Contact = () => {
 					}
 		 );
 		 e.target.reset();
-		 showResult( true );
+		 toast.success(`Your message has been successfully sent.
+			I will contact you soon.`)
+		//  showResult( true );
 	};
 	
-	setTimeout( () => {
-		showResult(false)
-	}, 5000)
+	// setTimeout( () => {
+	// 	showResult(false)
+	// }, 5000)
 
   return (
 		<ContactSection>
@@ -126,9 +129,9 @@ export const Contact = () => {
                 <SubmitBtn>
                   <button className="outer-shadow hover-in-shadow">Send Message</button>
 								</SubmitBtn>
-								<div>
+								{/* <div>
 									{result ? <Result /> : null}
-								</div>
+								</div> */}
               </Wrapper>
 						</Form>
 					</ContactForm>
