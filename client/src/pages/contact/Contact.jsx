@@ -47,12 +47,12 @@ export const Contact = () => {
 		 e.target.reset();
 		 toast.success(`Your message has been successfully sent.
 			I will contact you soon.`)
-		//  showResult( true );
+		 showResult( true );
 	};
 	
-	// setTimeout( () => {
-	// 	showResult(false)
-	// }, 5000)
+	setTimeout( () => {
+		showResult(false)
+	}, 5000)
 
   return (
 		<ContactSection>
@@ -129,9 +129,9 @@ export const Contact = () => {
                 <SubmitBtn>
                   <button className="outer-shadow hover-in-shadow">Send Message</button>
 								</SubmitBtn>
-								{/* <div>
+								<div>
 									{result ? <Result /> : null}
-								</div> */}
+								</div>
               </Wrapper>
 						</Form>
 					</ContactForm>
