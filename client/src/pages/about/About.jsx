@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { GitHub, Facebook, LinkedIn } from '@material-ui/icons';
 
-import PDF from '../../Timothy-CV.pdf';
+import PDF from '../../Timothy-CV-2023.pdf';
 import { Container, Wrapper, SectionTitle } from '../../styles/globalStyles';
 import ProfilePic from '../../images/photo-2.png';
 import { Button } from '../../components/buttons';
